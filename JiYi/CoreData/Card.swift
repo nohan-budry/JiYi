@@ -18,7 +18,7 @@ class Card: NSManagedObject {
     @NSManaged var createdByUser: Bool
     @NSManaged var genres: NSSet
 
-    func addToGenre(title: String, createIfNeeded: Bool, createdByUser: Bool)  {
+    func addToGenre(title: String, insertIfNeeded: Bool, createdByUser: Bool)  {
         
         let context = CoreDataManager.managedObjectContext()
         let predicate = NSPredicate(format: "%K LIKE %@", "title", title)
@@ -30,7 +30,7 @@ class Card: NSManagedObject {
             sortDescriptors: nil
         ) as! [Genre]
         
-        if createIfNeeded && genreEntities.count == 0 {
+        if insertIfNeeded && genreEntities.count == 0 {
         
             if let genre = CoreDataManager.insertGenre(title, createdbyUser: createdByUser, cards:  nil) {
                 

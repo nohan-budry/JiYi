@@ -19,13 +19,13 @@ extension CoreDataManager {
         
         for cardDict in dict {
             
-            createCard(cardDict as! [String:AnyObject])
+            insertCardWithDefaultValues(cardDict as! [String:AnyObject])
         }
         
         return saveManagedObjectContext()
     }
     
-    class func createCard(dict: [String:AnyObject]) {
+    class func insertCardWithDefaultValues(dict: [String:AnyObject]) {
         
         let sign = dict["sign"] as! String
         let traduction = dict["traduction"] as! String
@@ -35,7 +35,8 @@ extension CoreDataManager {
             
             for genre in genres {
                 
-                card.addToGenre(genre, createIfNeeded: true, createdByUser: false)
+                //add genre of the card and insert if needed
+                card.addToGenre(genre, insertIfNeeded: true, createdByUser: false)
             }
         }
     }

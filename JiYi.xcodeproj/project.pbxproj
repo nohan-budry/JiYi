@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		931A42EC1D0044FE006752D2 /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42EB1D0044FE006752D2 /* DefaultValues.swift */; };
+		931A42EC1D0044FE006752D2 /* CoreDataManager+inserDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42EB1D0044FE006752D2 /* CoreDataManager+inserDefaultValues.swift */; };
 		931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */; };
 		9328F9831D0005D10025838B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9821D0005D10025838B /* AppDelegate.swift */; };
 		9328F9881D0005D10025838B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9328F9861D0005D10025838B /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		931A42EB1D0044FE006752D2 /* DefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultValues.swift; path = CoreData/DefaultValues/DefaultValues.swift; sourceTree = "<group>"; };
+		931A42EB1D0044FE006752D2 /* CoreDataManager+inserDefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CoreDataManager+inserDefaultValues.swift"; path = "CoreData/DefaultValues/CoreDataManager+inserDefaultValues.swift"; sourceTree = "<group>"; };
 		931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault+isFirstLaunch.swift"; path = "Template/NSUserDefault+isFirstLaunch.swift"; sourceTree = "<group>"; };
 		9328F97F1D0005D10025838B /* JiYi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiYi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9328F9821D0005D10025838B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		9328F9CF1D002CCD0025838B /* DefaultValues */ = {
 			isa = PBXGroup;
 			children = (
-				931A42EB1D0044FE006752D2 /* DefaultValues.swift */,
+				931A42EB1D0044FE006752D2 /* CoreDataManager+inserDefaultValues.swift */,
 				9328F9D01D002CE90025838B /* Cards.plist */,
 			);
 			name = DefaultValues;
@@ -342,7 +342,7 @@
 			files = (
 				931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */,
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
-				931A42EC1D0044FE006752D2 /* DefaultValues.swift in Sources */,
+				931A42EC1D0044FE006752D2 /* CoreDataManager+inserDefaultValues.swift in Sources */,
 				9328F9CA1D00281A0025838B /* Card.swift in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,
 				9328F9831D0005D10025838B /* AppDelegate.swift in Sources */,
