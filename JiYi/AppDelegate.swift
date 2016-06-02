@@ -23,20 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("first launch")
         }
         
-        let cards = CoreDataManager.fetchEntities(
-            "Card",
+        let genres = CoreDataManager.fetchEntities(
+            "Genre",
             managedObjectContext: CoreDataManager.managedObjectContext(),
             predicate: nil,
             sortDescriptors: nil
-        ) as! [Card]
+        ) as! [Genre]
         
-        for card in cards {
+        for genre in genres {
             
-            print("\(card.sign) -> \(card.traduction)")
+            print("\(genre.title)")
             
-            for genre: Genre in card.genres.allObjects as! [Genre] {
+            for card: Card in genre.cards.allObjects as! [Card] {
                 
-                print("    -> \(genre.title)")
+                print("    -> \(card.sign) -  \(card.traduction)")
             }
         }
         
