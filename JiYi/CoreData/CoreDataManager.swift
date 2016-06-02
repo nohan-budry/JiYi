@@ -69,7 +69,7 @@ extension CoreDataManager {
         card.sign = sign
         card.traduction = traduction
         card.createdByUser = createdbyUser
-        card.genres = genres
+        card.genres = genres != nil ? genres! : NSSet()
         
         return saveManagedObjectContext() ? card : nil
     }
@@ -86,7 +86,7 @@ extension CoreDataManager {
         genre.identifier = NSDate()
         genre.title = title
         genre.createdByUser = createdbyUser
-        genre.cards = cards
+        genre.cards = cards != nil ? cards! : NSSet()
         
         return saveManagedObjectContext() ? genre : nil
     }

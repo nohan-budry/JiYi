@@ -15,6 +15,6 @@ class Genre: NSManagedObject {
     @NSManaged var identifier: NSDate
     @NSManaged var title: String
     @NSManaged var createdByUser: Bool
-    @NSManaged var cards: NSSet?
+    @NSManaged var cards: NSSet
 
 }
