@@ -51,6 +51,19 @@ class CardTableViewController: UITableViewController, NSFetchedResultsController
             traductionLabel.text = card.traduction
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let identifier = segue.identifier {
+            
+            //perform an action like giving the delegate when switching the view
+            switch identifier {
+                
+            default:
+                break
+            }
+        }
+    }
  }
 
 //MARK: tableView funcs
@@ -75,6 +88,11 @@ extension CardTableViewController {
         configureCell(cell, indexPath: indexPath)
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print("play pronunciation now!")
     }
 }
 
