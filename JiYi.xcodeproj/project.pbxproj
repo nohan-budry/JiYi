@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		9328F9831D0005D10025838B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9821D0005D10025838B /* AppDelegate.swift */; };
 		9328F9881D0005D10025838B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9328F9861D0005D10025838B /* Main.storyboard */; };
-		9328F98B1D0005D10025838B /* JiYi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9891D0005D10025838B /* JiYi.xcdatamodeld */; };
 		9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9328F98E1D0005D10025838B /* LaunchScreen.storyboard */; };
 		9328F99B1D0005D10025838B /* JiYiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F99A1D0005D10025838B /* JiYiTests.swift */; };
 		9328F9A61D0005D10025838B /* JiYiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9A51D0005D10025838B /* JiYiUITests.swift */; };
-		9328F9BB1D0008F30025838B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9BA1D0008F30025838B /* ViewController.swift */; };
 		9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9BC1D0009070025838B /* JiYi.xcdatamodeld */; };
+		9328F9C01D000F8D0025838B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9328F9BF1D000F8D0025838B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 		9328F97F1D0005D10025838B /* JiYi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiYi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9328F9821D0005D10025838B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9328F9871D0005D10025838B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9328F98A1D0005D10025838B /* JiYi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JiYi.xcdatamodel; sourceTree = "<group>"; };
 		9328F98F1D0005D10025838B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9328F9911D0005D10025838B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9328F9961D0005D10025838B /* JiYiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JiYiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,8 +45,8 @@
 		9328F9A11D0005D10025838B /* JiYiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JiYiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9328F9A51D0005D10025838B /* JiYiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiYiUITests.swift; sourceTree = "<group>"; };
 		9328F9A71D0005D10025838B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9328F9BA1D0008F30025838B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = UI/ViewController.swift; sourceTree = "<group>"; };
 		9328F9BD1D0009070025838B /* JiYi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JiYi.xcdatamodel; sourceTree = "<group>"; };
+		9328F9BF1D000F8D0025838B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +104,6 @@
 				9328F9B81D0008A00025838B /* SpriteKit */,
 				9328F9B71D0008990025838B /* GameplayKit */,
 				9328F9B61D0008930025838B /* Assets */,
-				9328F9891D0005D10025838B /* JiYi.xcdatamodeld */,
 			);
 			path = JiYi;
 			sourceTree = "<group>";
@@ -158,6 +155,7 @@
 		9328F9B61D0008930025838B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9328F9BF1D000F8D0025838B /* Assets.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -179,7 +177,6 @@
 		9328F9B91D0008B20025838B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9328F9BA1D0008F30025838B /* ViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -252,6 +249,7 @@
 				TargetAttributes = {
 					9328F97E1D0005D00025838B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = TCUR4R66UJ;
 					};
 					9328F9951D0005D10025838B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -289,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */,
+				9328F9C01D000F8D0025838B /* Assets.xcassets in Resources */,
 				9328F9881D0005D10025838B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,8 +313,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9328F9BB1D0008F30025838B /* ViewController.swift in Sources */,
-				9328F98B1D0005D10025838B /* JiYi.xcdatamodeld in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,
 				9328F9831D0005D10025838B /* AppDelegate.swift in Sources */,
 			);
@@ -461,6 +458,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JiYi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.nodev.JiYi;
@@ -472,6 +471,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JiYi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.nodev.JiYi;
@@ -564,16 +565,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9328F9891D0005D10025838B /* JiYi.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9328F98A1D0005D10025838B /* JiYi.xcdatamodel */,
-			);
-			currentVersion = 9328F98A1D0005D10025838B /* JiYi.xcdatamodel */;
-			path = JiYi.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		9328F9BC1D0009070025838B /* JiYi.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
