@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G7a" minimumToolsVersion="Automatic">
     <entity name="Card" representedClassName=".Card" syncable="YES">
-        <attribute name="createdbyUser" optional="YES" syncable="YES"/>
+        <attribute name="createdbyUser" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="sign" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="traduction" optional="YES" attributeType="String" syncable="YES"/>
