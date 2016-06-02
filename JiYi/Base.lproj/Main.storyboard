@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--TabBarController-->
@@ -58,18 +59,49 @@
         <!--Cards View-->
         <scene sceneID="Szk-2p-DEb">
             <objects>
-                <tableViewController title="Cards View" id="VvU-Va-xtJ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3tj-Qe-myh">
+                <tableViewController title="Cards View" id="VvU-Va-xtJ" customClass="CardTableViewController" customModule="JiYi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="3tj-Qe-myh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="o3v-oh-JF4">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="75" id="o3v-oh-JF4">
+                                <rect key="frame" x="0.0" y="92" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3v-oh-JF4" id="8d1-mx-a7l">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" verticalHuggingPriority="251" text="Buffle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHp-UJ-wJ6">
+                                            <rect key="frame" x="92" y="8" width="433" height="58"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="牛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-2C-xuH">
+                                            <rect key="frame" x="33" y="8" width="34" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="y4b-XA-9RA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="34"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="y4b-XA-9RA"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="IHp-UJ-wJ6" secondAttribute="bottom" id="2tb-Gw-YXj"/>
+                                        <constraint firstAttribute="topMargin" secondItem="IHp-UJ-wJ6" secondAttribute="top" id="QjZ-aT-zoC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="IHp-UJ-wJ6" secondAttribute="trailing" id="d1z-yb-4zf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bxt-2C-xuH" secondAttribute="bottom" id="de3-IJ-pM2"/>
+                                        <constraint firstAttribute="topMargin" secondItem="Bxt-2C-xuH" secondAttribute="top" id="lNo-EW-ff6"/>
+                                        <constraint firstItem="IHp-UJ-wJ6" firstAttribute="leading" secondItem="Bxt-2C-xuH" secondAttribute="trailing" constant="25" id="pKS-3i-B6U"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Bxt-2C-xuH" secondAttribute="leading" constant="-25" id="rIn-SJ-YbC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -202,7 +234,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LLw-30-56a">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeckCell" id="LLw-30-56a">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LLw-30-56a" id="hXv-eM-qhy">
