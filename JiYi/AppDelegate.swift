@@ -16,7 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if NSUserDefaults.isFirstLaunch() {
+            
+            CoreDataManager.insertDefaultValues()
+            print("first launch")
+        }
+        
+        let cards = CoreDataManager.fetchEntities(
+            "Card",
+            managedObjectContext: CoreDataManager.managedObjectContext(),
+            predicate: nil,
+            sortDescriptors: nil
+        ) as! [Card]
+        
+        for card in cards {
+            
+            print("\(card.sign) -> \(card.traduction)")
+            
+            for genre: Genre in card.genres.allObjects as! [Genre] {
+                
+                print("    -> \(genre.title)")
+            }
+        }
+        
         return true
     }
 

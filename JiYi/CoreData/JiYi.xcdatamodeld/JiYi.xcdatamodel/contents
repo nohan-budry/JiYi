@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G7a" minimumToolsVersion="Automatic">
     <entity name="Card" representedClassName=".Card" syncable="YES">
-        <attribute name="createdbyUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="createdByUser" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="sign" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="traduction" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +14,7 @@
         <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="genres" inverseEntity="Card" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="Genre" positionX="142" positionY="-18" width="128" height="103"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Genre" positionX="142" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

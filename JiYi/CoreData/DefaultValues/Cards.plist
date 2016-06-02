@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<array>
+	<dict>
+		<key>sign</key>
+		<string>鼠</string>
+		<key>traduction</key>
+		<string>Rat</string>
+		<key>genres</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>牛</string>
+		<key>traduction</key>
+		<string>Buffle</string>
+		<key>genres</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>虎</string>
+		<key>traduction</key>
+		<string>Tigre</string>
+		<key>genres</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>兔</string>
+		<key>traduction</key>
+		<string>Lapin</string>
+		<key>genres</key>
+		<array>
+			<string>Zodiaque</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>貓</string>
+		<key>traduction</key>
+		<string>Chat</string>
+		<key>genres</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+</array>
 </plist>
