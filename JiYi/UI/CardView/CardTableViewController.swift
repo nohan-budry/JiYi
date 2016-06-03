@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import AVFoundation
 
 class CardTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
@@ -46,9 +47,17 @@ class CardTableViewController: UITableViewController, NSFetchedResultsController
         
             let signLabel = cell.viewWithTag(1000) as! UILabel
             let traductionLabel = cell.viewWithTag(1001) as! UILabel
+            let pronunciationlabel = cell.viewWithTag(1002) as! UILabel
             
             signLabel.text = card.sign
             traductionLabel.text = card.traduction
+            pronunciationlabel.hidden = !card.hasPronunciation()
+            
+            if !pronunciationlabel.hidden {
+                
+                card.instanciatePronunciations(nil)
+                print(card.pronunciations.count)
+            }
         }
     }
     
@@ -92,7 +101,19 @@ extension CardTableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        print("play pronunciation now!")
+        print(1)
+        if let card = fetchedResultController.objectAtIndexPath(indexPath) as? Card {
+            
+            print(2)
+            if let sound = card.pronunciations.first {
+                
+                sound.play()
+                print(3)
+                print(sound)
+            }
+        }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
 

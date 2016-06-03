@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,23 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             CoreDataManager.insertDefaultValues()
             print("first launch")
-        }
-        
-        let genres = CoreDataManager.fetchEntities(
-            "Genre",
-            managedObjectContext: CoreDataManager.managedObjectContext(),
-            predicate: nil,
-            sortDescriptors: nil
-        ) as! [Genre]
-        
-        for genre in genres {
-            
-            print("\(genre.title)")
-            
-            for card: Card in genre.cards.allObjects as! [Card] {
-                
-                print("    -> \(card.sign) -  \(card.traduction)")
-            }
         }
         
         return true

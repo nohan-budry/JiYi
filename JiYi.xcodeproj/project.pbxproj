@@ -20,6 +20,11 @@
 		9328F9CA1D00281A0025838B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9C61D00281A0025838B /* Card.swift */; };
 		9328F9CC1D00281A0025838B /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9C81D00281A0025838B /* Genre.swift */; };
 		9328F9D11D002CE90025838B /* Cards.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9328F9D01D002CE90025838B /* Cards.plist */; };
+		939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */; };
+		939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934B1D0154F3005CEAC3 /* Chat000.mp3 */; };
+		939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */; };
+		939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934D1D0154F3005CEAC3 /* Rat000.mp3 */; };
+		939B93531D0154F3005CEAC3 /* Tigre000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934E1D0154F3005CEAC3 /* Tigre000.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		9328F9C61D00281A0025838B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = CoreData/Card.swift; sourceTree = "<group>"; };
 		9328F9C81D00281A0025838B /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genre.swift; path = CoreData/Genre.swift; sourceTree = "<group>"; };
 		9328F9D01D002CE90025838B /* Cards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Cards.plist; path = CoreData/DefaultValues/Cards.plist; sourceTree = "<group>"; };
+		939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Buffle000.mp3; path = Assets/Pronunciations/Buffle000.mp3; sourceTree = "<group>"; };
+		939B934B1D0154F3005CEAC3 /* Chat000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Chat000.mp3; path = Assets/Pronunciations/Chat000.mp3; sourceTree = "<group>"; };
+		939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lapin000.mp3; path = Assets/Pronunciations/Lapin000.mp3; sourceTree = "<group>"; };
+		939B934D1D0154F3005CEAC3 /* Rat000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rat000.mp3; path = Assets/Pronunciations/Rat000.mp3; sourceTree = "<group>"; };
+		939B934E1D0154F3005CEAC3 /* Tigre000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Tigre000.mp3; path = Assets/Pronunciations/Tigre000.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9328F9BF1D000F8D0025838B /* Assets.xcassets */,
+				939B93491D015463005CEAC3 /* Pronunciations */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -213,6 +224,18 @@
 				9328F9D01D002CE90025838B /* Cards.plist */,
 			);
 			name = DefaultValues;
+			sourceTree = "<group>";
+		};
+		939B93491D015463005CEAC3 /* Pronunciations */ = {
+			isa = PBXGroup;
+			children = (
+				939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */,
+				939B934B1D0154F3005CEAC3 /* Chat000.mp3 */,
+				939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */,
+				939B934D1D0154F3005CEAC3 /* Rat000.mp3 */,
+				939B934E1D0154F3005CEAC3 /* Tigre000.mp3 */,
+			);
+			name = Pronunciations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,8 +343,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */,
 				9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */,
+				939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */,
 				9328F9C01D000F8D0025838B /* Assets.xcassets in Resources */,
+				939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */,
+				939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */,
+				939B93531D0154F3005CEAC3 /* Tigre000.mp3 in Resources */,
 				9328F9D11D002CE90025838B /* Cards.plist in Resources */,
 				9328F9881D0005D10025838B /* Main.storyboard in Resources */,
 			);

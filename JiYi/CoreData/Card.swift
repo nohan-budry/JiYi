@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreData
+import UIKit
+import AVFoundation
 
 
 class Card: NSManagedObject {
@@ -17,6 +19,47 @@ class Card: NSManagedObject {
     @NSManaged var traduction: String
     @NSManaged var createdByUser: Bool
     @NSManaged var genres: NSSet
+    
+    var pronunciations = [AVAudioPlayer]()
+    
+    func instanciatePronunciations(withDelegate: AVAudioPlayerDelegate?) {
+        
+        pronunciations = []
+        
+        var index = 0
+        while let path = NSBundle.mainBundle().pathForResource(pronunciationFileName(index), ofType: "mp3") {
+            
+            let url = NSURL(fileURLWithPath: path)
+            var sound: AVAudioPlayer!
+            
+            do {
+                
+                try sound = AVAudioPlayer(contentsOfURL: url)
+                
+            } catch {
+                
+                print(error)
+            }
+            
+            sound.delegate = withDelegate
+            sound.prepareToPlay()
+            sound.numberOfLoops = 0
+            
+            pronunciations.append(sound)
+            
+            index += 1
+        }
+    }
+    
+    func hasPronunciation() -> Bool {
+        
+        return NSBundle.mainBundle().pathForResource(pronunciationFileName(0), ofType: "mp3") != nil
+    }
+    
+    func pronunciationFileName(index: Int) -> String {
+        
+        return String(format: "%@%03d", traduction, index)
+    }
 
     func addToGenre(title: String, insertIfNeeded: Bool, createdByUser: Bool)  {
         
