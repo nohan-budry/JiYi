@@ -18,7 +18,7 @@ class Card: NSManagedObject {
     @NSManaged var sign: String
     @NSManaged var traduction: String
     @NSManaged var createdByUser: Bool
-    @NSManaged var genres: NSSet
+    @NSManaged var decks: NSSet
     
     var pronunciations = [AVAudioPlayer]()
     
@@ -61,29 +61,29 @@ class Card: NSManagedObject {
         return String(format: "%@%03d", traduction, index)
     }
 
-    func addToGenre(title: String, insertIfNeeded: Bool, createdByUser: Bool)  {
+    func addToDeck(title: String, insertIfNeeded: Bool, createdByUser: Bool)  {
         
         let context = CoreDataManager.managedObjectContext()
         let predicate = NSPredicate(format: "%K LIKE %@", "title", title)
         
-        var genreEntities = CoreDataManager.fetchEntities(
-            "Genre",
+        var deckEntities = CoreDataManager.fetchEntities(
+            "Deck",
             managedObjectContext: context,
             predicate: predicate,
             sortDescriptors: nil
-        ) as! [Genre]
+        ) as! [Deck]
         
-        if insertIfNeeded && genreEntities.count == 0 {
+        if insertIfNeeded && deckEntities.count == 0 {
         
-            if let genre = CoreDataManager.insertGenre(title, createdbyUser: createdByUser, cards:  nil) {
+            if let deck = CoreDataManager.insertDeck(title, createdbyUser: createdByUser, cards:  nil) {
                 
-                genreEntities.append(genre)
+                deckEntities.append(deck)
             }
         }
         
-        for genre in genreEntities {
+        for deck in deckEntities {
             
-            genre.cards = genre.cards.setByAddingObject(self)
+            deck.cards = deck.cards.setByAddingObject(self)
         }
     }
 }

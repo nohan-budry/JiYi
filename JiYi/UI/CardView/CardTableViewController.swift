@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import CoreData
-import AVFoundation
 
 class CardTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
@@ -56,7 +55,6 @@ class CardTableViewController: UITableViewController, NSFetchedResultsController
             if !pronunciationlabel.hidden {
                 
                 card.instanciatePronunciations(nil)
-                print(card.pronunciations.count)
             }
         }
     }
@@ -101,15 +99,11 @@ extension CardTableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        print(1)
         if let card = fetchedResultController.objectAtIndexPath(indexPath) as? Card {
             
-            print(2)
             if let sound = card.pronunciations.first {
                 
                 sound.play()
-                print(3)
-                print(sound)
             }
         }
         

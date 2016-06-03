@@ -1,5 +1,5 @@
 //
-//  Genre.swift
+//  Deck.swift
 //  JiYi
 //
 //  Created by Nohan Budry on 02.06.16.
@@ -10,11 +10,18 @@ import Foundation
 import CoreData
 
 
-class Genre: NSManagedObject {
+class Deck: NSManagedObject {
 
     @NSManaged var identifier: NSDate
     @NSManaged var title: String
     @NSManaged var createdByUser: Bool
     @NSManaged var cards: NSSet
-
+    
+    func instaciateCardsPronunciations() {
+        
+        for card in cards.allObjects as! [Card] {
+            
+            card.instanciatePronunciations(nil)
+        }
+    }
 }

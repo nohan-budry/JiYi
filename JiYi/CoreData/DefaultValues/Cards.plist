@@ -7,7 +7,7 @@
 		<string>鼠</string>
 		<key>traduction</key>
 		<string>Rat</string>
-		<key>genres</key>
+		<key>decks</key>
 		<array>
 			<string>Animaux</string>
 			<string>Zodiaque</string>
@@ -18,7 +18,7 @@
 		<string>牛</string>
 		<key>traduction</key>
 		<string>Buffle</string>
-		<key>genres</key>
+		<key>decks</key>
 		<array>
 			<string>Animaux</string>
 			<string>Zodiaque</string>
@@ -29,7 +29,7 @@
 		<string>虎</string>
 		<key>traduction</key>
 		<string>Tigre</string>
-		<key>genres</key>
+		<key>decks</key>
 		<array>
 			<string>Animaux</string>
 			<string>Zodiaque</string>
@@ -40,7 +40,7 @@
 		<string>兔</string>
 		<key>traduction</key>
 		<string>Lapin</string>
-		<key>genres</key>
+		<key>decks</key>
 		<array>
 			<string>Zodiaque</string>
 		</array>
@@ -50,7 +50,7 @@
 		<string>貓</string>
 		<key>traduction</key>
 		<string>Chat</string>
-		<key>genres</key>
+		<key>decks</key>
 		<array>
 			<string>Animaux</string>
 		</array>

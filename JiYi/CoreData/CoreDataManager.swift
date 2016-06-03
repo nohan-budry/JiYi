@@ -60,7 +60,7 @@ class CoreDataManager {
 //MARK: Card entity funcs
 extension CoreDataManager {
     
-    class func insertCard(sign: String, traduction: String, createdbyUser: Bool, genres: NSSet?) -> Card? {
+    class func insertCard(sign: String, traduction: String, createdbyUser: Bool, decks: NSSet?) -> Card? {
         
         let context = managedObjectContext()
         let card = insertManagedObject("Card", managedObjectContext: context) as! Card
@@ -69,26 +69,26 @@ extension CoreDataManager {
         card.sign = sign
         card.traduction = traduction
         card.createdByUser = createdbyUser
-        card.genres = genres != nil ? genres! : NSSet()
+        card.decks = decks != nil ? decks! : NSSet()
         
         return saveManagedObjectContext() ? card : nil
     }
 }
 
-//MARK: Genre entity funcs
+//MARK: Deck entity funcs
 extension CoreDataManager {
     
-    class func insertGenre(title: String, createdbyUser: Bool, cards: NSSet?) -> Genre? {
+    class func insertDeck(title: String, createdbyUser: Bool, cards: NSSet?) -> Deck? {
         
         let context = managedObjectContext()
-        let genre = insertManagedObject("Genre", managedObjectContext: context) as! Genre
+        let deck = insertManagedObject("Deck", managedObjectContext: context) as! Deck
         
-        genre.identifier = NSDate()
-        genre.title = title
-        genre.createdByUser = createdbyUser
-        genre.cards = cards != nil ? cards! : NSSet()
+        deck.identifier = NSDate()
+        deck.title = title
+        deck.createdByUser = createdbyUser
+        deck.cards = cards != nil ? cards! : NSSet()
         
-        return saveManagedObjectContext() ? genre : nil
+        return saveManagedObjectContext() ? deck : nil
     }
 }
 
@@ -112,14 +112,14 @@ extension CoreDataManager {
         
         let sign = dict["sign"] as! String
         let traduction = dict["traduction"] as! String
-        let genres = dict["genres"] as! [String]
+        let decks = dict["decks"] as! [String]
         
-        if let card = insertCard(sign, traduction: traduction, createdbyUser: false, genres: nil) {
+        if let card = insertCard(sign, traduction: traduction, createdbyUser: false, decks: nil) {
             
-            for genre in genres {
+            for deck in decks {
                 
-                //add genre of the card and insert if needed
-                card.addToGenre(genre, insertIfNeeded: true, createdByUser: false)
+                //add deck of the card and insert if needed
+                card.addToDeck(deck, insertIfNeeded: true, createdByUser: false)
             }
         }
     }
