@@ -19,11 +19,19 @@ class DeckTableViewController: UITableViewController, NSFetchedResultsController
         instantiateFetchedResultController()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        tableView.reloadData()
+    }
+    
     func instantiateFetchedResultController() {
         
         let fetchRequest = NSFetchRequest(entityName: "Deck")
-        let sorter = NSSortDescriptor(key: "title", ascending: true)
-        fetchRequest.sortDescriptors = [sorter]
+		let sorters = [
+			NSSortDescriptor(key: "createdByUser", ascending: true),
+			NSSortDescriptor(key: "title", ascending: true)
+		]
+        fetchRequest.sortDescriptors = sorters
         
         let context = CoreDataManager.managedObjectContext()
         
@@ -123,60 +131,68 @@ extension DeckTableViewController {
         }
         return nil
     }
+	
+	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		
+		if let deck = fetchedResultController.objectAtIndexPath(indexPath) as? Deck {
+			
+			return deck.createdByUser
+		}
+		
+		return false
+	}
+	
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		
+		guard let deck = fetchedResultController.objectAtIndexPath(indexPath) as? Deck else {
+			
+			return
+		}
+		
+		if editingStyle == .Delete {
+				
+			CoreDataManager.removeEntity(deck)
+		}
+	}
 }
 
-////MARK: Deck Info Delegate
-//extension DeckTableViewController {
-//    
-//    func deckInfoUpdateDeckList(indexPath: NSIndexPath) {
-//        
-//        do {
-//            
-//            try fetchedResultController.performFetch()
-//            
-//            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-//                
-//                configureCell(cell, indexPath: indexPath)
-//            }
-//            
-//        } catch {
-//            
-//            fatalError("Failed to initialize fetched result controller: \(error)")
-//        }
-//    }
-//}
-//
-////MARK: Deck Edit Delegate
-//extension DeckTableViewController {
-//    
-//    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet) -> Bool {
-//        
-//        if let _ = CoreDataManager.insertDeck(title, createdbyUser: true, cards: cards) {
-//            
-//            if CoreDataManager.saveManagedObjectContext() {
-//                
-//                do {
-//                    
-//                    try fetchedResultController.performFetch()
-//                    
-//                } catch {
-//                    
-//                    print(error)
-//                    return false
-//                }
-//                
-//                return true
-//            }
-//        }
-//        
-//        return false
-//    }
-//    
-//    func deckEditExit(controller: DeckEditTableViewController, animated: Bool) {
-//        
-//        controller.dismissViewControllerAnimated(true, completion: nil)
-//    }
-//}
+//MARK: fetched result controller delegate
+extension DeckTableViewController {
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        
+        self.tableView.beginUpdates()
+        print("Begin Update in Deck View")
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        switch type {
+        case .Insert:
+            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        case .Delete:
+            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        default:
+            return
+        }
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        case .Update:
+            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, indexPath: indexPath!)
+        case .Move:
+            tableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+        }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.endUpdates()
+    }
+}
 
 
 

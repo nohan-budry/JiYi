@@ -53,8 +53,15 @@ class CoreDataManager {
             print(error)
             return []
         }
-        
     }
+	
+	class func removeEntity(entity: NSManagedObject) -> Bool {
+		
+		let context = managedObjectContext()
+		context.deleteObject(entity)
+		
+		return saveManagedObjectContext()
+	}
 }
 
 //MARK: Card entity funcs

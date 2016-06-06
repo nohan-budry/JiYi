@@ -20,17 +20,17 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
     
     override func viewDidLoad() {
         
-        guard let deck = self.deck else {
-            
+        if let _ = deck {
             dismissViewControllerAnimated(true, completion: nil)
-            return
         }
         
         instantiateFetchedResultdController()
+        editbarButton.enabled = deck.createdByUser
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
-        title = deck.title
-        deck.instaciateCardsPronunciations()
-        //editbarButton.enabled = deck.createdByUser
+        tableView.reloadData()
     }
     
     func instantiateFetchedResultdController() {
@@ -57,6 +57,26 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if let sectionInfo = fetchedResultsController.sections?[section] {
+            
+            let cards = sectionInfo.objects
+            if let card = cards?.first as? Card {
+                
+                for deck in card.decks.allObjects as! [Deck] {
+                    
+                    if deck.identifier == self.deck.identifier {
+                        
+                        return deck.title
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
+    
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         
         if let card = fetchedResultsController.objectAtIndexPath(indexPath) as? Card {
@@ -72,7 +92,6 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
             if !pronunciationlabel.hidden {
                 
                 card.instanciatePronunciations(nil)
-                print(card.traduction)
             }
         }
     }
@@ -97,14 +116,9 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
             }
         }
     }
-    
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        
-        tableView.reloadData()
-    }
 }
 
-//MARK: tableView funcs
+//MARK: - Table View
 extension DeckInfoTableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -130,62 +144,57 @@ extension DeckInfoTableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let card = deck!.cards.allObjects[indexPath.row] as! Card
-        if card.hasPronunciation() {
-            
-            card.instanciatePronunciations(nil)
-            
-            guard let sound = card.pronunciations.first else {
+        if let card = fetchedResultsController.objectAtIndexPath(indexPath) as? Card {
+            if card.hasPronunciation() {
                 
-                return
+                if let sound = card.pronunciations.first {
+                    
+                    sound.play()
+                }
             }
-            
-            sound.stop()
-            sound.currentTime = 0
-            sound.play()
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
 
-////MARK: Deck Edit Delegate
-//extension DeckInfoTableViewController {
-//    
-//    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet) -> Bool {
-//        
-//        if let theDeck = deck {
-//        
-//            theDeck.title = title
-//            theDeck.cards = cards
-//            
-//            if CoreDataManager.saveManagedObjectContext() {
-//                
-//                do {
-//                    
-//                    try fetchedResultsController.performFetch()
-//                    
-//                } catch {
-//                
-//                    print(error)
-//                    return false
-//                }
-//                
-//                self.title = title
-//                
-//                return true
-//            }
-//        }
-//        
-//        return false
-//    }
-//    
-//    func deckEditExit(controller: DeckEditTableViewController, animated: Bool) {
-//        
-//        controller.dismissViewControllerAnimated(true, completion: nil)
-//    }
-//}
-
+//MARK: - Fetched Results Controller Delegate
+extension DeckInfoTableViewController {
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        
+        self.tableView.beginUpdates()
+        print("Begin Update in DeckInfo View")
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        switch type {
+        case .Insert:
+            self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        case .Delete:
+            self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+        default:
+            return
+        }
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case .Insert:
+            tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        case .Update:
+            self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, indexPath: indexPath!)
+        case .Move:
+            tableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+        }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.endUpdates()
+    }
+}
 
 
 

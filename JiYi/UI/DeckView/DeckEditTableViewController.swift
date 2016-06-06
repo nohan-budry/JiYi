@@ -36,7 +36,20 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
     
     @IBAction func done() {
         
+        if let deck = self.deck {
         
+            deck.title = titleTextField.text!
+            deck.cards = cards
+            
+        } else {
+            
+            CoreDataManager.insertDeck(titleTextField.text!, createdbyUser: true, cards: cards)
+        }
+        
+        if CoreDataManager.saveManagedObjectContext() {
+        
+            cancel()
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
