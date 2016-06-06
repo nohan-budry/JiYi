@@ -23,6 +23,8 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
     var deck: Deck!
     var indexPath: NSIndexPath!
     
+    @IBOutlet weak var editbarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         
         guard let deck = self.deck, _ = indexPath else {
@@ -35,6 +37,7 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
         
         title = deck.title
         deck.instaciateCardsPronunciations()
+        editbarButton.enabled = deck.createdByUser
     }
     
     func instantiateFetchedResultdController() {

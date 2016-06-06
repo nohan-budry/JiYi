@@ -50,7 +50,7 @@ class DeckTableViewController: UITableViewController, NSFetchedResultsController
             titleLabel.text = deck.title
             
             let count = deck.cards.count
-            subtitleLabel.text = "\(count) Carte\(count > 1 ? "s": "")"
+            subtitleLabel.text = "\(count) Carte\(count == 1 ? "s": "")"
         }
     }
     

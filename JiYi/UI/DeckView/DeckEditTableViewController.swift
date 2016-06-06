@@ -34,7 +34,7 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
         titleTextField.text = deck?.title
         configueCardCountlabel(cards.count)
         
-        //doneBarButton.enabled = canEnableDoneBarButton(titleTextField.text!)
+        doneBarButton.enabled = canEnableDoneBarButton(titleTextField.text!)
     }
     
     @IBAction func cancel() {
@@ -72,7 +72,7 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
     
     func configueCardCountlabel(count: Int) {
         
-        nbCardsLabel.text = "\(count) Carte\(count > 1 ? "s": "")"
+        nbCardsLabel.text = "\(count) Carte\(count == 1 ? "s": "") (minimum 2 cartes)"
     }
 }
 
@@ -117,6 +117,7 @@ extension DeckEditTableViewController {
         self.cards = cardSet
         
         configueCardCountlabel(cards.count)
+        doneBarButton.enabled = canEnableDoneBarButton(titleTextField.text!)
     }
 }
 

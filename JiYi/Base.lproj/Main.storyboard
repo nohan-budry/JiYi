@@ -359,6 +359,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editbarButton" destination="PxB-Rs-3Pg" id="2Ij-lm-Ogn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lh-Wv-u58" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
