@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class DeckTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, DeckInfoTableViewControllerDelegate {
+class DeckTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchedResultController: NSFetchedResultsController!
     
@@ -27,7 +27,13 @@ class DeckTableViewController: UITableViewController, NSFetchedResultsController
         
         let context = CoreDataManager.managedObjectContext()
         
-        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: context,
+            sectionNameKeyPath: "createdByUser",
+            cacheName: nil
+        )
+        
         fetchedResultController.delegate = self
         
         do {
@@ -67,16 +73,8 @@ class DeckTableViewController: UITableViewController, NSFetchedResultsController
                     
                     let deckInfoView = segue.destinationViewController as! DeckInfoTableViewController
                     
-                    deckInfoView.delegate = self
                     deckInfoView.deck = fetchedResultController.objectAtIndexPath(indexPath) as? Deck
-                    deckInfoView.indexPath = indexPath
                 }
-                
-            case "DeckAddSegue":
-                
-                let navigationController = segue.destinationViewController as! UINavigationController
-                _ = navigationController.topViewController as! DeckEditTableViewController
-                //deckEditView.delegate = self
                 
             default:
                 break
@@ -112,42 +110,62 @@ extension DeckTableViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-}
-
-//MARK: Deck Info Delegate
-extension DeckTableViewController {
     
-    func deckInfoUpdateDeckList(indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        do {
+        if let sectionInfo = fetchedResultController.sections?[section] {
             
-            try fetchedResultController.performFetch()
-            
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            let decks = sectionInfo.objects
+            if let deck = decks?.first as? Deck {
                 
-                configureCell(cell, indexPath: indexPath)
+                return deck.createdByUser ? "Mes decks" : "Decks par défaut"
             }
-            
-        } catch {
-            
-            fatalError("Failed to initialize fetched result controller: \(error)")
         }
+        return nil
     }
 }
 
+////MARK: Deck Info Delegate
+//extension DeckTableViewController {
+//    
+//    func deckInfoUpdateDeckList(indexPath: NSIndexPath) {
+//        
+//        do {
+//            
+//            try fetchedResultController.performFetch()
+//            
+//            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+//                
+//                configureCell(cell, indexPath: indexPath)
+//            }
+//            
+//        } catch {
+//            
+//            fatalError("Failed to initialize fetched result controller: \(error)")
+//        }
+//    }
+//}
+//
 ////MARK: Deck Edit Delegate
 //extension DeckTableViewController {
 //    
-//    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet, indexPath: NSIndexPath?) -> Bool {
+//    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet) -> Bool {
 //        
-//        if deck == nil {
+//        if let _ = CoreDataManager.insertDeck(title, createdbyUser: true, cards: cards) {
 //            
-//            if let _ = CoreDataManager.insertDeck(title, createdbyUser: true, cards: cards) {
+//            if CoreDataManager.saveManagedObjectContext() {
 //                
-//                if CoreDataManager.saveManagedObjectContext() {
+//                do {
 //                    
-//                    tableView.reloadData()
+//                    try fetchedResultController.performFetch()
+//                    
+//                } catch {
+//                    
+//                    print(error)
+//                    return false
 //                }
+//                
+//                return true
 //            }
 //        }
 //        

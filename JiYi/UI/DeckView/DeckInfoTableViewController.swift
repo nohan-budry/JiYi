@@ -10,24 +10,17 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol DeckInfoTableViewControllerDelegate {
-    
-    func deckInfoUpdateDeckList(indexPath: NSIndexPath)
-}
-
-class DeckInfoTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, DeckEditTableViewControllerDelegate {
+class DeckInfoTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchedResultsController: NSFetchedResultsController!
     
-    var delegate: DeckInfoTableViewControllerDelegate!
     var deck: Deck!
-    var indexPath: NSIndexPath!
     
     @IBOutlet weak var editbarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         
-        guard let deck = self.deck, _ = indexPath else {
+        guard let deck = self.deck else {
             
             dismissViewControllerAnimated(true, completion: nil)
             return
@@ -37,7 +30,7 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
         
         title = deck.title
         deck.instaciateCardsPronunciations()
-        editbarButton.enabled = deck.createdByUser
+        //editbarButton.enabled = deck.createdByUser
     }
     
     func instantiateFetchedResultdController() {
@@ -79,6 +72,7 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
             if !pronunciationlabel.hidden {
                 
                 card.instanciatePronunciations(nil)
+                print(card.traduction)
             }
         }
     }
@@ -95,7 +89,6 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
                 let navigationController = segue.destinationViewController as! UINavigationController
                 let deckEditView = navigationController.topViewController as! DeckEditTableViewController
                 
-                deckEditView.delegate = self
                 deckEditView.deck = deck!
                 deckEditView.title = "Modifier le deck"
             
@@ -103,6 +96,11 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
                 break
             }
         }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        
+        tableView.reloadData()
     }
 }
 
@@ -135,6 +133,8 @@ extension DeckInfoTableViewController {
         let card = deck!.cards.allObjects[indexPath.row] as! Card
         if card.hasPronunciation() {
             
+            card.instanciatePronunciations(nil)
+            
             guard let sound = card.pronunciations.first else {
                 
                 return
@@ -149,44 +149,42 @@ extension DeckInfoTableViewController {
     }
 }
 
-//MARK: Deck Edit Delegate
-extension DeckInfoTableViewController {
-    
-    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet) -> Bool {
-        
-        if let theDeck = deck {
-        
-            theDeck.title = title
-            theDeck.cards = cards
-            
-            if CoreDataManager.saveManagedObjectContext() {
-                
-                do {
-                    
-                    try fetchedResultsController.performFetch()
-                    
-                } catch {
-                
-                    print(error)
-                    return false
-                }
-                
-                self.title = title
-                delegate.deckInfoUpdateDeckList(indexPath!)
-                tableView.reloadData()
-                
-                return true
-            }
-        }
-        
-        return false
-    }
-    
-    func deckEditExit(controller: DeckEditTableViewController, animated: Bool) {
-        
-        controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-}
+////MARK: Deck Edit Delegate
+//extension DeckInfoTableViewController {
+//    
+//    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet) -> Bool {
+//        
+//        if let theDeck = deck {
+//        
+//            theDeck.title = title
+//            theDeck.cards = cards
+//            
+//            if CoreDataManager.saveManagedObjectContext() {
+//                
+//                do {
+//                    
+//                    try fetchedResultsController.performFetch()
+//                    
+//                } catch {
+//                
+//                    print(error)
+//                    return false
+//                }
+//                
+//                self.title = title
+//                
+//                return true
+//            }
+//        }
+//        
+//        return false
+//    }
+//    
+//    func deckEditExit(controller: DeckEditTableViewController, animated: Bool) {
+//        
+//        controller.dismissViewControllerAnimated(true, completion: nil)
+//    }
+//}
 
 
 

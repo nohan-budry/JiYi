@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol DeckCardSelectorTableViewControllerDelegate {
+protocol DeckCardSelectorDelegate {
     
-    func deckCardSelectorSave(cards: [Card])
+    func deckCardSelectorSaveList(cards: [Card])
 }
 
 class DeckCardSelectorTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     var fetchedResultsController: NSFetchedResultsController!
-    var currentCardSet: [Card]!
-    var delegate: DeckCardSelectorTableViewControllerDelegate!
+    var deckCards: [Card]!
+    var delegate: DeckCardSelectorDelegate!
     
     override func viewDidLoad() {
         
@@ -66,7 +66,7 @@ class DeckCardSelectorTableViewController: UITableViewController, NSFetchedResul
             
             let checkmarkLabel = cell.viewWithTag(1002) as! UILabel
             
-            checkmarkLabel.hidden = !currentCardSet.contains(card)
+            checkmarkLabel.hidden = !deckCards.contains(card)
         }
     }
 }
@@ -102,19 +102,19 @@ extension DeckCardSelectorTableViewController {
         
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
         
-            if let index = currentCardSet.indexOf(card) {
+            if let index = deckCards.indexOf(card) {
                 
-                currentCardSet.removeAtIndex(index)
+                deckCards.removeAtIndex(index)
                 configureCheckmark(cell, indexPath: indexPath)
                 
             } else {
                 
-                currentCardSet.append(card)
+                deckCards.append(card)
                 configureCheckmark(cell, indexPath: indexPath)
             }
         }
         
-        delegate.deckCardSelectorSave(currentCardSet)
+        delegate.deckCardSelectorSaveList(deckCards)
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

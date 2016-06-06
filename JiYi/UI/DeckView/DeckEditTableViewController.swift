@@ -10,18 +10,10 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol DeckEditTableViewControllerDelegate {
-    
-    func deckEditSaveDeck(deck: Deck?, title: String, cards: NSSet) -> Bool
-    func deckEditExit(controller: DeckEditTableViewController, animated: Bool)
-}
-
-class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, DeckCardSelectorTableViewControllerDelegate {
+class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, DeckCardSelectorDelegate {
     
     var deck: Deck?
     var cards: NSSet!
-    
-    var delegate: DeckEditTableViewControllerDelegate!
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var nbCardsLabel: UILabel!
@@ -39,15 +31,12 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
     
     @IBAction func cancel() {
         
-        delegate.deckEditExit(self, animated: true)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func done() {
         
-        if delegate.deckEditSaveDeck(deck, title: titleTextField.text!, cards: cards) {
-            
-            delegate.deckEditExit(self, animated: true)
-        }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,8 +50,8 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
                 
                 let viewController = segue.destinationViewController as! DeckCardSelectorTableViewController
                 
-                viewController.currentCardSet = cards.allObjects as! [Card]
                 viewController.delegate = self
+                viewController.deckCards = cards.allObjects as! [Card]
                 
             default:
                 break
@@ -111,7 +100,7 @@ extension DeckEditTableViewController {
 //MARK: deck card selector Delegate
 extension DeckEditTableViewController {
     
-    func deckCardSelectorSave(cards: [Card]) {
+    func deckCardSelectorSaveList(cards: [Card]) {
         
         let cardSet = NSSet(array: cards)
         self.cards = cardSet
