@@ -16,7 +16,7 @@ protocol DeckEditTableViewControllerDelegate {
     func deckEditExit(controller: DeckEditTableViewController, animated: Bool)
 }
 
-class DeckEditTableViewController: UITableViewController, UITextFieldDelegate {
+class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, DeckCardSelectorTableViewControllerDelegate {
     
     var deck: Deck?
     var cards: NSSet!
@@ -32,6 +32,7 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate {
         cards = deck != nil ? deck!.cards : NSSet()
         
         titleTextField.text = deck?.title
+        configueCardCountlabel(cards.count)
         
         //doneBarButton.enabled = canEnableDoneBarButton(titleTextField.text!)
     }
@@ -47,6 +48,31 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate {
             
             delegate.deckEditExit(self, animated: true)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let identifier = segue.identifier {
+            
+            //perform an action like giving the delegate when switching the view
+            switch identifier {
+                
+            case "CardSelectorSegue":
+                
+                let viewController = segue.destinationViewController as! DeckCardSelectorTableViewController
+                
+                viewController.currentCardSet = cards.allObjects as! [Card]
+                viewController.delegate = self
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    func configueCardCountlabel(count: Int) {
+        
+        nbCardsLabel.text = "\(count) Carte\(count > 1 ? "s": "")"
     }
 }
 
@@ -81,6 +107,32 @@ extension DeckEditTableViewController {
         return title.characters.count > 0 && cards.count >= 2
     }
 }
+
+//MARK: deck card selector Delegate
+extension DeckEditTableViewController {
+    
+    func deckCardSelectorSave(cards: [Card]) {
+        
+        let cardSet = NSSet(array: cards)
+        self.cards = cardSet
+        
+        configueCardCountlabel(cards.count)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

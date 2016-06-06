@@ -94,6 +94,7 @@ class DeckInfoTableViewController: UITableViewController, NSFetchedResultsContro
                 
                 deckEditView.delegate = self
                 deckEditView.deck = deck!
+                deckEditView.title = "Modifier le deck"
             
             default:
                 break
@@ -157,10 +158,19 @@ extension DeckInfoTableViewController {
             
             if CoreDataManager.saveManagedObjectContext() {
                 
-                self.title = title
-                tableView.reloadData()
+                do {
+                    
+                    try fetchedResultsController.performFetch()
+                    
+                } catch {
                 
+                    print(error)
+                    return false
+                }
+                
+                self.title = title
                 delegate.deckInfoUpdateDeckList(indexPath!)
+                tableView.reloadData()
                 
                 return true
             }

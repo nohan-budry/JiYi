@@ -375,7 +375,7 @@
                         <sections>
                             <tableViewSection headerTitle="Informations" id="DeJ-md-6YV">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="sQ8-HX-zy2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="sQ8-HX-zy2">
                                         <rect key="frame" x="0.0" y="114" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQ8-HX-zy2" id="vGm-Io-XL7">
@@ -410,8 +410,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ajouter des cartes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="96l-P1-5B3">
-                                                    <rect key="frame" x="15" y="8" width="133" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Choisir les cartes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="96l-P1-5B3">
+                                                    <rect key="frame" x="15" y="8" width="126" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,6 +426,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VR2-Gq-Cl8" kind="show" identifier="CardSelectorSegue" id="ijv-MD-7s2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -456,6 +459,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zP-UL-Ohe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3276" y="1695"/>
+        </scene>
+        <!--Deck Card Selector Table View Controller-->
+        <scene sceneID="a0A-cQ-6ve">
+            <objects>
+                <tableViewController id="VR2-Gq-Cl8" customClass="DeckCardSelectorTableViewController" customModule="JiYi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="yBy-Ri-KW1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="75" id="94j-pJ-05h">
+                                <rect key="frame" x="0.0" y="92" width="600" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="94j-pJ-05h" id="KtL-0a-dnQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" verticalHuggingPriority="251" text="Buffle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgC-V7-49V">
+                                            <rect key="frame" x="92" y="8" width="422" height="58"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="牛" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmt-Dw-gqV">
+                                            <rect key="frame" x="33" y="8" width="34" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="en1-qP-ZBD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="34"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="en1-qP-ZBD"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QX-db-h1d">
+                                            <rect key="frame" x="539" y="8" width="28" height="58"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="45"/>
+                                            <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KgC-V7-49V" secondAttribute="bottom" id="1Cu-G0-hHe"/>
+                                        <constraint firstItem="4QX-db-h1d" firstAttribute="leading" secondItem="KgC-V7-49V" secondAttribute="trailing" constant="25" id="7EI-pv-YYR"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="cmt-Dw-gqV" secondAttribute="leading" constant="-25" id="ECc-LP-fLZ"/>
+                                        <constraint firstItem="KgC-V7-49V" firstAttribute="leading" secondItem="cmt-Dw-gqV" secondAttribute="trailing" constant="25" id="F5V-gI-JFK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="4QX-db-h1d" secondAttribute="bottom" id="Hep-cF-pgl"/>
+                                        <constraint firstAttribute="topMargin" secondItem="4QX-db-h1d" secondAttribute="top" id="Trl-lp-z9r"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cmt-Dw-gqV" secondAttribute="bottom" id="WhC-gc-4PE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4QX-db-h1d" secondAttribute="trailing" constant="25" id="YAd-KA-Zad"/>
+                                        <constraint firstAttribute="topMargin" secondItem="KgC-V7-49V" secondAttribute="top" id="oxw-XG-22Q"/>
+                                        <constraint firstAttribute="topMargin" secondItem="cmt-Dw-gqV" secondAttribute="top" id="thY-Ff-CPM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VR2-Gq-Cl8" id="Mrb-X2-Mq4"/>
+                            <outlet property="delegate" destination="VR2-Gq-Cl8" id="ctX-qd-UQk"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chI-gX-Fm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4039" y="1695"/>
         </scene>
         <!--Preset Nav-->
         <scene sceneID="Vvi-Nn-h4p">
