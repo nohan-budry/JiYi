@@ -14,6 +14,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="t00-Se-JIh" kind="relationship" relationship="viewControllers" id="mtN-6q-SEw"/>
@@ -239,10 +244,11 @@
         <scene sceneID="Ndj-iM-0de">
             <objects>
                 <navigationController title="Cards Nav" id="RtJ-ir-IxD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cartes" id="2fA-Tj-EJ0"/>
+                    <tabBarItem key="tabBarItem" title="Cartes" image="cardBarButton" id="2fA-Tj-EJ0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iCG-RB-4as">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="VvU-Va-xtJ" kind="relationship" relationship="rootViewController" id="ag5-bX-bGd"/>
@@ -285,10 +291,11 @@
         <scene sceneID="Gum-1s-x4V">
             <objects>
                 <navigationController title="Settings Nav" id="aGL-vY-2PU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Réglages" id="9VA-w7-WeZ"/>
+                    <tabBarItem key="tabBarItem" title="Réglages" image="settingsBarButton" id="9VA-w7-WeZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VtA-8m-deY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="oDy-eB-l29" kind="relationship" relationship="rootViewController" id="dKd-zj-EdO"/>
@@ -331,10 +338,11 @@
         <scene sceneID="XcD-Tu-SsU">
             <objects>
                 <navigationController title="Profile Nav" id="jEr-XY-W1g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="RxV-cT-O1b"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileBarButton" id="RxV-cT-O1b"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fn1-gT-uhk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="s3T-6S-UVt" kind="relationship" relationship="rootViewController" id="1Gg-eZ-oAp"/>
@@ -645,10 +653,11 @@
         <scene sceneID="Vvi-Nn-h4p">
             <objects>
                 <navigationController title="Preset Nav" id="Nkk-al-3Jz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Decks" id="Fte-i7-KXB"/>
+                    <tabBarItem key="tabBarItem" title="Decks" image="deckBarButton" id="Fte-i7-KXB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Av-L3-d9K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="mSP-we-Ccu" kind="relationship" relationship="rootViewController" id="9sT-K6-Uo7"/>
@@ -662,11 +671,12 @@
         <scene sceneID="tmT-U3-zrD">
             <objects>
                 <navigationController title="Main Nav" automaticallyAdjustsScrollViewInsets="NO" id="t00-Se-JIh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Jouer" id="MDd-H3-Kc3"/>
+                    <tabBarItem key="tabBarItem" title="Jouer" image="mainBarButton" id="MDd-H3-Kc3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GGW-96-LMQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -685,6 +695,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SdW-tS-YPa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -696,7 +707,15 @@
             <point key="canvasLocation" x="2509" y="1695"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cardBarButton" width="22" height="22"/>
+        <image name="deckBarButton" width="22" height="22"/>
+        <image name="mainBarButton" width="22" height="22"/>
+        <image name="profileBarButton" width="22" height="22"/>
+        <image name="settingsBarButton" width="22" height="22"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="euL-4U-IwV"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
