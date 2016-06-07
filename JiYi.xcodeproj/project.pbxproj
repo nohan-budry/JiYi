@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896831D069A8A005B8A5E /* MainTableViewController.swift */; };
+		930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */; };
 		931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */; };
 		931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42F01D0054DC006752D2 /* CardTableViewController.swift */; };
 		93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93280EF41D0547600058EDD5 /* DeckCardSelectorTableViewController.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930896831D069A8A005B8A5E /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewController.swift; path = UI/MainView/MainTableViewController.swift; sourceTree = "<group>"; };
+		930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainDeckSelectorTableViewController.swift; path = UI/MainView/MainDeckSelectorTableViewController.swift; sourceTree = "<group>"; };
 		931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault+isFirstLaunch.swift"; path = "Template/NSUserDefault+isFirstLaunch.swift"; sourceTree = "<group>"; };
 		931A42F01D0054DC006752D2 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardTableViewController.swift; path = UI/CardView/CardTableViewController.swift; sourceTree = "<group>"; };
 		93280EF41D0547600058EDD5 /* DeckCardSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckCardSelectorTableViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930896821D069990005B8A5E /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				930896831D069A8A005B8A5E /* MainTableViewController.swift */,
+				930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
 		931A42EF1D0054BF006752D2 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 		9328F9B91D0008B20025838B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				930896821D069990005B8A5E /* MainView */,
 				931A42EF1D0054BF006752D2 /* CardView */,
 				93E13A4E1D01729C00F75A12 /* DeckView */,
 			);
@@ -401,6 +415,8 @@
 				931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */,
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
 				931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */,
+				930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */,
+				930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */,
 				9328F9CA1D00281A0025838B /* Card.swift in Sources */,
 				93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,

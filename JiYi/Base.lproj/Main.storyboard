@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G7a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kA1-rX-6gi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G12a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kA1-rX-6gi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -30,31 +30,140 @@
         <!--Main View-->
         <scene sceneID="Bb4-Dg-hyv">
             <objects>
-                <tableViewController title="Main View" id="qL8-Bp-hs1" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KAl-kG-H7C">
+                <tableViewController title="Main View" id="qL8-Bp-hs1" customClass="MainTableViewController" customModule="JiYi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KAl-kG-H7C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayCell" id="FQi-pq-jg7">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQi-pq-jg7" id="zVY-w3-77T">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Deck sélectionné" id="5hb-Wf-Cbh">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qkd-aA-lfE" rowHeight="50" style="IBUITableViewCellStyleDefault" id="RKt-Hc-auK">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RKt-Hc-auK" id="7NP-nv-sqd">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="deckName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qkd-aA-lfE">
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ReE-G0-h1e" kind="show" identifier="DeckSelectorSegue" id="3zG-Ha-RUE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Nombres de paires" id="70D-l3-vfD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="MTR-ME-Xim">
+                                        <rect key="frame" x="0.0" y="215" width="600" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MTR-ME-Xim" id="1vs-Xz-tF8">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shu-23-1TC">
+                                                    <rect key="frame" x="8" y="8" width="584" height="183"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="qL8-Bp-hs1" id="x5v-DY-N6o"/>
+                                                        <outlet property="delegate" destination="qL8-Bp-hs1" id="PD4-g7-Q6d"/>
+                                                    </connections>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Shu-23-1TC" secondAttribute="trailing" id="9gr-Ju-gYs"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Shu-23-1TC" secondAttribute="leading" id="KSR-e4-VTi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Shu-23-1TC" secondAttribute="trailing" id="L5M-Qb-0zp"/>
+                                                <constraint firstAttribute="topMargin" secondItem="Shu-23-1TC" secondAttribute="top" id="Nfc-BY-tKO"/>
+                                                <constraint firstAttribute="topMargin" secondItem="Shu-23-1TC" secondAttribute="top" id="YMf-LC-nOY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Shu-23-1TC" secondAttribute="bottom" id="a9m-l2-nF8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Shu-23-1TC" secondAttribute="bottom" id="aM2-AQ-vUI"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Shu-23-1TC" secondAttribute="leading" id="pAV-SS-lM4"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9gr-Ju-gYs"/>
+                                                    <exclude reference="Nfc-BY-tKO"/>
+                                                    <exclude reference="a9m-l2-nF8"/>
+                                                    <exclude reference="pAV-SS-lM4"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="qL8-Bp-hs1" id="rho-HG-f4X"/>
                             <outlet property="delegate" destination="qL8-Bp-hs1" id="UKB-lZ-OC4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Jouer" id="DyH-If-dCX"/>
+                    <navigationItem key="navigationItem" title="Nouvelle partie" id="DyH-If-dCX">
+                        <barButtonItem key="rightBarButtonItem" title="Jouer" id="zLo-dY-VRv">
+                            <connections>
+                                <action selector="launchGame:" destination="qL8-Bp-hs1" id="Bec-Jx-WoC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardCountPickerView" destination="Shu-23-1TC" id="CTr-q4-mtJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ch-Tb-NhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="148"/>
+        </scene>
+        <!--Sélectionnez un deck-->
+        <scene sceneID="rYY-IW-5fc">
+            <objects>
+                <tableViewController id="ReE-G0-h1e" customClass="MainDeckSelectorTableViewController" customModule="JiYi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lKv-VP-Y1V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeckCell" textLabel="Og9-hs-Qwr" detailTextLabel="yK6-ZQ-UOg" style="IBUITableViewCellStyleSubtitle" id="AjH-Fi-OKa">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AjH-Fi-OKa" id="7XN-lz-DER">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="1000" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Og9-hs-Qwr">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" tag="1001" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yK6-ZQ-UOg">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ReE-G0-h1e" id="bcc-Sc-0A1"/>
+                            <outlet property="delegate" destination="ReE-G0-h1e" id="IqT-cz-BxM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sélectionnez un deck" id="nt1-0C-c8o"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMS-xm-PGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="148"/>
         </scene>
         <!--Cards View-->
         <scene sceneID="Szk-2p-DEb">

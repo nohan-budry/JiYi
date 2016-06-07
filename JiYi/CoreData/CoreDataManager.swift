@@ -80,6 +80,11 @@ extension CoreDataManager {
         
         return saveManagedObjectContext() ? card : nil
     }
+	
+	class func numberOfCards() -> Int {
+	
+		return fetchEntities("Card", managedObjectContext: managedObjectContext(), predicate: nil, sortDescriptors: nil).count
+	}
 }
 
 //MARK: Deck entity funcs
