@@ -114,6 +114,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cardCountPickerView" destination="Shu-23-1TC" id="CTr-q4-mtJ"/>
+                        <outlet property="deckLabel" destination="qkd-aA-lfE" id="Mm8-EY-6mQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ch-Tb-NhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
