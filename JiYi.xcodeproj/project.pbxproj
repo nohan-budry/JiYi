@@ -15,6 +15,8 @@
 		9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9308968D1D07F805005B8A5E /* MemoryBrain.swift */; };
 		930896931D07FA56005B8A5E /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896921D07FA56005B8A5E /* CardEntity.swift */; };
 		930896951D07FB23005B8A5E /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896941D07FB23005B8A5E /* VisualComponent.swift */; };
+		930896971D07FF7B005B8A5E /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896961D07FF7B005B8A5E /* EntityManager.swift */; };
+		930896991D0833F3005B8A5E /* GamePreparationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896981D0833F3005B8A5E /* GamePreparationState.swift */; };
 		931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */; };
 		931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42F01D0054DC006752D2 /* CardTableViewController.swift */; };
 		93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93280EF41D0547600058EDD5 /* DeckCardSelectorTableViewController.swift */; };
@@ -65,6 +67,8 @@
 		9308968D1D07F805005B8A5E /* MemoryBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryBrain.swift; path = GameplayKit/MemoryBrain.swift; sourceTree = "<group>"; };
 		930896921D07FA56005B8A5E /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = GameplayKit/Entities/CardEntity.swift; sourceTree = "<group>"; };
 		930896941D07FB23005B8A5E /* VisualComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualComponent.swift; path = GameplayKit/Components/VisualComponent.swift; sourceTree = "<group>"; };
+		930896961D07FF7B005B8A5E /* EntityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
+		930896981D0833F3005B8A5E /* GamePreparationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePreparationState.swift; path = GameplayKit/States/GamePreparationState.swift; sourceTree = "<group>"; };
 		931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault+isFirstLaunch.swift"; path = "Template/NSUserDefault+isFirstLaunch.swift"; sourceTree = "<group>"; };
 		931A42F01D0054DC006752D2 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardTableViewController.swift; path = UI/CardView/CardTableViewController.swift; sourceTree = "<group>"; };
 		93280EF41D0547600058EDD5 /* DeckCardSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckCardSelectorTableViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		930896911D07FA18005B8A5E /* States */ = {
 			isa = PBXGroup;
 			children = (
+				930896981D0833F3005B8A5E /* GamePreparationState.swift */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				9308968D1D07F805005B8A5E /* MemoryBrain.swift */,
+				930896961D07FF7B005B8A5E /* EntityManager.swift */,
 				9308968F1D07FA0C005B8A5E /* Entities */,
 				930896901D07FA13005B8A5E /* Components */,
 				930896911D07FA18005B8A5E /* States */,
@@ -461,11 +467,13 @@
 				931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */,
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
 				931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */,
+				930896971D07FF7B005B8A5E /* EntityManager.swift in Sources */,
 				930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */,
 				930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */,
 				930896951D07FB23005B8A5E /* VisualComponent.swift in Sources */,
 				9328F9CA1D00281A0025838B /* Card.swift in Sources */,
 				93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */,
+				930896991D0833F3005B8A5E /* GamePreparationState.swift in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,
 				9328F9831D0005D10025838B /* AppDelegate.swift in Sources */,
 				930896931D07FA56005B8A5E /* CardEntity.swift in Sources */,

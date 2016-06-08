@@ -13,6 +13,9 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 	
+	var cards: [Card]!
+	var nbOfPairs: Int!
+	
 	override func viewDidLoad() {
 		
 		guard let gameScene = GameScene(fileNamed: "GameScene.sks"), let gameView = self.view as? SKView else {
@@ -28,6 +31,9 @@ class GameViewController: UIViewController {
 		
 		//Scene configuration
 		gameScene.scaleMode = .Fill
+		
+		gameScene.cards = cards
+		gameScene.nbOfPairs = nbOfPairs
 		
 		gameView.presentScene(gameScene)
 	}

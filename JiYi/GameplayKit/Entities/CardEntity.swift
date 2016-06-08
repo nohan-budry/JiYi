@@ -15,7 +15,7 @@ class CardEntity: GKEntity {
 	init(card: Card) {
 		super.init()
 		
-		let visualComponent = VisualComponent(sign: card.sign, traduction: card.traduction, faceUp: true)
+		let visualComponent = VisualComponent(sign: card.sign, traduction: card.traduction, faceUp: false)
 		addComponent(visualComponent)
 	}
 }

@@ -13,7 +13,7 @@ import CoreData
 class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 	
 	var deck: Deck?
-	var nbOfCards = 4
+	var nbOfPairs = 4
 	
 	@IBOutlet weak var deckLabel: UILabel!
 	@IBOutlet weak var cardCountPickerView: UIPickerView!
@@ -46,6 +46,12 @@ extension MainTableViewController {
 				
 				let viewController = segue.destinationViewController as! MainDeckSelectorTableViewController
 				viewController.delegate = self
+				
+			case "StartGameSegue":
+				
+				let viewController = segue.destinationViewController as! GameViewController
+				viewController.cards = deck!.cards.allObjects as! [Card]
+				viewController.nbOfPairs = nbOfPairs
 				
 			default:
 				break
@@ -106,7 +112,7 @@ extension MainTableViewController {
 	
 	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		
-		nbOfCards = possiblesNbOfCards[row]
+		nbOfPairs = possiblesNbOfCards[row]
 	}
 	
 	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

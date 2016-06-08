@@ -16,10 +16,13 @@ class VisualComponent: GKComponent {
 	let faceNode: SKNode
 	let backNode: SKNode
 	
+	let foundShape: SKShapeNode
+	
 	var faceUp: Bool
 	
 	init(sign: String, traduction: String, faceUp: Bool) {
 		
+		node = SKNode()
 		faceNode = SKNode()
 		backNode = SKNode()
 		
@@ -37,6 +40,7 @@ class VisualComponent: GKComponent {
 		card.lineWidth = 5
 		
 		//faceNode setup
+		faceNode.name = "FrontFace"
 		
 		//sign
 		let signLabel = SKLabelNode(fontNamed: "Menlo Bold")
@@ -61,6 +65,7 @@ class VisualComponent: GKComponent {
 		faceNode.addChild(traductionLabel)
 		
 		//backNode creation
+		backNode.name = "BackFace"
 		
 		//text
 		let textLabel = SKLabelNode(fontNamed: "Menlo")
@@ -69,11 +74,52 @@ class VisualComponent: GKComponent {
 		textLabel.fontColor = SKColor.blackColor()
 		textLabel.verticalAlignmentMode = .Center
 		textLabel.horizontalAlignmentMode = .Center
+		textLabel.zRotation = 45 * CGFloat(M_PI) / 180
 		
-		backNode.addChild(card)
+		backNode.addChild(card.copy() as! SKShapeNode)
 		backNode.addChild(textLabel)
 		
-		node = faceUp ? faceNode : backNode
+		node.addChild(faceUp ? faceNode : backNode)
+		
+		//foundshape
+		foundShape = card.copy() as! SKShapeNode
+		foundShape.fillColor = SKColor.clearColor()
+		foundShape.strokeColor = SKColor(red: 250 / 255, green: 190 / 255, blue: 5 / 255, alpha: 1)
+	}
+	
+	func switchTo(faceUp faceUp: Bool) {
+		
+		//return if already in good position
+		if self.faceUp == faceUp {
+			
+			return
+		}
+		
+		//get current node
+		let currentNode = self.faceUp ? faceNode : backNode
+		
+		//update self faceUp var
+		self.faceUp = faceUp
+		
+		//get nextNode
+		let nextNode = faceUp ? faceNode : backNode
+		
+		let scaleAction = SKAction.scaleXTo(0, duration: 0.25)
+		currentNode.runAction(scaleAction) {
+			
+			nextNode.xScale = 0
+			
+			currentNode.removeFromParent()
+			self.node.addChild(nextNode)
+			
+			let scaleAction = SKAction.scaleXTo(nextNode.yScale, duration: 0.25)
+			nextNode.runAction(scaleAction)
+		}
+	}
+	
+	func enterFoundState() {
+		
+		node.addChild(foundShape)
 	}
 }
 
