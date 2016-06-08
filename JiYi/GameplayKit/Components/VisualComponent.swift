@@ -20,16 +20,13 @@ class VisualComponent: GKComponent {
 	
 	var faceUp: Bool
 	
-	init(sign: String, traduction: String, faceUp: Bool) {
+	init(sign: String, traduction: String, faceUp: Bool, spacement: CGFloat, cardSize: CGFloat, cardsPerLine: [CGFloat], index: Int, nbOfCards: Int) {
 		
 		node = SKNode()
 		faceNode = SKNode()
 		backNode = SKNode()
 		
 		self.faceUp = faceUp
-		
-		//constants
-		let cardSize = CGFloat(100)
 		
 		//back
 		let path = UIBezierPath(roundedRect: CGRectMake(0, 0, cardSize, cardSize), cornerRadius: 10)
@@ -85,6 +82,14 @@ class VisualComponent: GKComponent {
 		foundShape = card.copy() as! SKShapeNode
 		foundShape.fillColor = SKColor.clearColor()
 		foundShape.strokeColor = SKColor(red: 250 / 255, green: 190 / 255, blue: 5 / 255, alpha: 1)
+		
+		super.init()
+		
+		//place node
+		if let gridPosition = getGridPosition(index, nbOfCards: nbOfCards, cardsPerLine: cardsPerLine) {
+			
+			node.position = gridPositionToPoint(gridPosition, spacement: spacement, cardSize: cardSize)
+		}
 	}
 	
 	func switchTo(faceUp faceUp: Bool) {
@@ -120,6 +125,36 @@ class VisualComponent: GKComponent {
 	func enterFoundState() {
 		
 		node.addChild(foundShape)
+	}
+	
+	func getGridPosition(index: Int, nbOfCards: Int, cardsPerLine: [CGFloat]) -> (x: CGFloat, y: CGFloat)? {
+		
+		//base setup
+		var i = CGFloat(index)
+		var y: CGFloat = 0
+		
+		for line in cardsPerLine {
+			
+			if i < line {
+				
+				//add 0.5 if it's line 2 or 3 and sign count is odd
+				let x = (nbOfCards / 2 >= 5 && y >= line - 2 && nbOfCards / 2 % 2 == 1 ) ? i + 0.5 : i
+				return (x, y)
+			}
+			
+			//set i to conform to the next line
+			i -= line
+			y += 1
+		}
+		
+		return nil
+	}
+	
+	func gridPositionToPoint(gridPosition: (x: CGFloat, y: CGFloat), spacement: CGFloat, cardSize: CGFloat) -> CGPoint {
+		
+		let x: CGFloat = gridPosition.x * (spacement + cardSize)
+		let y: CGFloat = gridPosition.y * (spacement + cardSize)
+		return CGPointMake(x, y)
 	}
 }
 

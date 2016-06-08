@@ -13,9 +13,10 @@ import CoreData
 
 class MemoryBrain {
 	
-	let cards: [Card]
+	let possibleCards: [Card]
 	let nbOfPairs: Int
 	let scene: SKScene
+	var cards: [Card]!
 	
 	//layers
 	let gameBoardLayer: SKNode
@@ -31,7 +32,7 @@ class MemoryBrain {
 	
 	init(cards: [Card], nbOfPairs: Int, inScene: SKScene) {
 		
-		self.cards = cards
+		self.possibleCards = cards
 		self.nbOfPairs = nbOfPairs
 		self.scene = inScene
 		
@@ -68,13 +69,54 @@ class MemoryBrain {
 		)
 		
 		//place gameBoard
-		let modifier = defaultSpacement + defaultCardSize * cardScale
-		gameBoardLayer.position = CGPointMake(modifier, gameBoradSize.height - modifier)
+		let cardSize = defaultCardSize * cardScale
+		let totalCardSize = CGSizeMake(
+			cardsPerLine[0] * (cardSize + defaultSpacement) + defaultSpacement,
+			CGFloat(cardsPerLine.count) * (cardSize + defaultSpacement) + defaultSpacement
+		)
+		
+		gameBoardLayer.position = CGPointMake(
+			(gameBoradSize.width - totalCardSize.width) / 2 + cardSize / 2 + defaultSpacement,
+			(gameBoradSize.height - totalCardSize.height) / 2 + cardSize / 2 + defaultSpacement
+		)
+		
+		//MARK: - Card Array Setup
+		
+		//create a shuffuled array of possible signs
+		let randomSource = GKRandomSource()
+		var shuffuledPossibleSigns = randomSource.arrayByShufflingObjectsInArray(possibleCards) as! [Card]
+		
+		//get used signs
+		var keepedSigns = [Card]()
+		for _ in 0 ..< nbOfPairs {
+			
+			keepedSigns.append(shuffuledPossibleSigns.removeFirst())
+		}
+		
+		//double the array to have each signe twice and shuffle the array
+		keepedSigns.appendContentsOf(keepedSigns)
+		cards = randomSource.arrayByShufflingObjectsInArray(keepedSigns) as! [Card]
+		
+		//createEntities
+		var index = 0
+		for card in cards {
+			
+			let cardEntity = CardEntity(
+				card: card,
+				spacement: defaultSpacement,
+				cardSize: defaultCardSize * cardScale,
+				cardsPerLine: cardsPerLine,
+				index: index,
+				nbOfCards: cards.count
+			)
+			entityManager.add(cardEntity, allreadyInScene: false, inLayer: gameBoardLayer)
+			
+			index += 1
+		}
 	}
 }
 
 //MARK: - UI
-
 extension MemoryBrain {
 	
 	func getCardScale(length: CGFloat, space: CGFloat, nbOfCards: CGFloat, cardSize: CGFloat) -> CGFloat {

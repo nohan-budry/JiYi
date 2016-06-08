@@ -12,10 +12,25 @@ import GameplayKit
 
 class CardEntity: GKEntity {
 	
-	init(card: Card) {
+	let card: Card
+	
+	init(card: Card, spacement: CGFloat, cardSize: CGFloat, cardsPerLine: [CGFloat], index: Int, nbOfCards: Int) {
+		
+		self.card = card
+		
 		super.init()
 		
-		let visualComponent = VisualComponent(sign: card.sign, traduction: card.traduction, faceUp: false)
+		let visualComponent = VisualComponent(
+			sign: card.sign,
+			traduction: card.traduction,
+			faceUp: false,
+			spacement: spacement,
+			cardSize: cardSize,
+			cardsPerLine: cardsPerLine,
+			index: index,
+			nbOfCards: nbOfCards
+		)
+		
 		addComponent(visualComponent)
 	}
 }
