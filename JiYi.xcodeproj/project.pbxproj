@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896831D069A8A005B8A5E /* MainTableViewController.swift */; };
 		930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */; };
+		930896881D07F125005B8A5E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896871D07F125005B8A5E /* GameViewController.swift */; };
+		9308968A1D07F318005B8A5E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896891D07F318005B8A5E /* GameScene.swift */; };
+		9308968C1D07F328005B8A5E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9308968B1D07F328005B8A5E /* GameScene.sks */; };
+		9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9308968D1D07F805005B8A5E /* MemoryBrain.swift */; };
+		930896931D07FA56005B8A5E /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896921D07FA56005B8A5E /* CardEntity.swift */; };
+		930896951D07FB23005B8A5E /* VisualComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896941D07FB23005B8A5E /* VisualComponent.swift */; };
 		931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */; };
 		931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A42F01D0054DC006752D2 /* CardTableViewController.swift */; };
 		93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93280EF41D0547600058EDD5 /* DeckCardSelectorTableViewController.swift */; };
@@ -53,6 +59,12 @@
 /* Begin PBXFileReference section */
 		930896831D069A8A005B8A5E /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewController.swift; path = UI/MainView/MainTableViewController.swift; sourceTree = "<group>"; };
 		930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainDeckSelectorTableViewController.swift; path = UI/MainView/MainDeckSelectorTableViewController.swift; sourceTree = "<group>"; };
+		930896871D07F125005B8A5E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = UI/MainView/GameViewController.swift; sourceTree = "<group>"; };
+		930896891D07F318005B8A5E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = SpriteKit/GameScene.swift; sourceTree = "<group>"; };
+		9308968B1D07F328005B8A5E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9308968D1D07F805005B8A5E /* MemoryBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryBrain.swift; path = GameplayKit/MemoryBrain.swift; sourceTree = "<group>"; };
+		930896921D07FA56005B8A5E /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = GameplayKit/Entities/CardEntity.swift; sourceTree = "<group>"; };
+		930896941D07FB23005B8A5E /* VisualComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualComponent.swift; path = GameplayKit/Components/VisualComponent.swift; sourceTree = "<group>"; };
 		931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSUserDefault+isFirstLaunch.swift"; path = "Template/NSUserDefault+isFirstLaunch.swift"; sourceTree = "<group>"; };
 		931A42F01D0054DC006752D2 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardTableViewController.swift; path = UI/CardView/CardTableViewController.swift; sourceTree = "<group>"; };
 		93280EF41D0547600058EDD5 /* DeckCardSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckCardSelectorTableViewController.swift; sourceTree = "<group>"; };
@@ -114,8 +126,32 @@
 			children = (
 				930896831D069A8A005B8A5E /* MainTableViewController.swift */,
 				930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */,
+				930896871D07F125005B8A5E /* GameViewController.swift */,
 			);
 			name = MainView;
+			sourceTree = "<group>";
+		};
+		9308968F1D07FA0C005B8A5E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				930896921D07FA56005B8A5E /* CardEntity.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		930896901D07FA13005B8A5E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				930896941D07FB23005B8A5E /* VisualComponent.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		930896911D07FA18005B8A5E /* States */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = States;
 			sourceTree = "<group>";
 		};
 		931A42EF1D0054BF006752D2 /* CardView */ = {
@@ -221,6 +257,10 @@
 		9328F9B71D0008990025838B /* GameplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				9308968D1D07F805005B8A5E /* MemoryBrain.swift */,
+				9308968F1D07FA0C005B8A5E /* Entities */,
+				930896901D07FA13005B8A5E /* Components */,
+				930896911D07FA18005B8A5E /* States */,
 			);
 			name = GameplayKit;
 			sourceTree = "<group>";
@@ -228,6 +268,8 @@
 		9328F9B81D0008A00025838B /* SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				930896891D07F318005B8A5E /* GameScene.swift */,
+				9308968B1D07F328005B8A5E /* GameScene.sks */,
 			);
 			name = SpriteKit;
 			sourceTree = "<group>";
@@ -384,6 +426,7 @@
 				9328F9C01D000F8D0025838B /* Assets.xcassets in Resources */,
 				939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */,
 				939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */,
+				9308968C1D07F328005B8A5E /* GameScene.sks in Resources */,
 				939B93531D0154F3005CEAC3 /* Tigre000.mp3 in Resources */,
 				9328F9D11D002CE90025838B /* Cards.plist in Resources */,
 				9328F9881D0005D10025838B /* Main.storyboard in Resources */,
@@ -411,16 +454,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9308968A1D07F318005B8A5E /* GameScene.swift in Sources */,
+				9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */,
+				930896881D07F125005B8A5E /* GameViewController.swift in Sources */,
 				93E13A521D0179FD00F75A12 /* DeckInfoTableViewController.swift in Sources */,
 				931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */,
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
 				931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */,
 				930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */,
 				930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */,
+				930896951D07FB23005B8A5E /* VisualComponent.swift in Sources */,
 				9328F9CA1D00281A0025838B /* Card.swift in Sources */,
 				93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,
 				9328F9831D0005D10025838B /* AppDelegate.swift in Sources */,
+				930896931D07FA56005B8A5E /* CardEntity.swift in Sources */,
 				93E13A541D019D3900F75A12 /* DeckEditTableViewController.swift in Sources */,
 				93E13A501D0172CC00F75A12 /* DeckTableViewController.swift in Sources */,
 				9328F9CC1D00281A0025838B /* Deck.swift in Sources */,

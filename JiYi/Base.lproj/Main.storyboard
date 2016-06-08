@@ -32,6 +32,26 @@
             </objects>
             <point key="canvasLocation" x="-644" y="148"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="taj-nE-OrH">
+            <objects>
+                <viewController id="80F-Nc-I1W" customClass="GameViewController" customModule="JiYi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nlg-Cu-WVB"/>
+                        <viewControllerLayoutGuide type="bottom" id="JEK-OK-bnD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B5U-J4-RM7" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x22-Kv-7dH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-551"/>
+        </scene>
         <!--Main View-->
         <scene sceneID="Bb4-Dg-hyv">
             <objects>
@@ -114,6 +134,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Jouer" id="zLo-dY-VRv">
                             <connections>
                                 <action selector="launchGame:" destination="qL8-Bp-hs1" id="Bec-Jx-WoC"/>
+                                <segue destination="80F-Nc-I1W" kind="presentation" identifier="StartGameSegue" id="lnr-Ga-f4H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
