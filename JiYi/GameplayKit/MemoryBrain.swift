@@ -40,7 +40,7 @@ class MemoryBrain {
 		
 		//layers setup
 		
-		menuLayer = scene.childNodeWithName("MenuNode") as! SKSpriteNode
+		menuLayer = scene.childNodeWithName("TopBar") as! SKSpriteNode
 		
 		gameBoardLayer = SKNode()
 		scene.addChild(gameBoardLayer)
@@ -50,7 +50,8 @@ class MemoryBrain {
 			states: [
 				GamePreparationState(withMemoryBrain: self),
 				CardsSelectionState(withMemoryBrain: self),
-				CardsCheckingState(withMemoryBrain: self)
+				CardsCheckingState(withMemoryBrain: self),
+				GameOverState(withMemoryBrain: self)
 			]
 		)
 		
@@ -225,8 +226,7 @@ extension MemoryBrain {
 				
 			} else {
 				
-				print("enter GameOverState now!")
-//				self.stateMachine.enterState(GameOverState)
+				self.stateMachine.enterState(GameOverState)
 			}
 		}
 	}
@@ -242,6 +242,22 @@ extension MemoryBrain {
 		}
 		
 		return true
+	}
+	
+	func showEndText(node: SKNode) {
+		
+		node.alpha = 0
+		
+		scene.addChild(node)
+		
+		let fadeIn = SKAction.fadeInWithDuration(0.25)
+		let wait = SKAction.waitForDuration(5.0)
+		let fadeOut = SKAction.fadeOutWithDuration(0.25)
+		
+		node.runAction(SKAction.sequence([fadeIn, wait, fadeOut])) {
+			
+			node.removeFromParent()
+		}
 	}
 }
 

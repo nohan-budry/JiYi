@@ -13,7 +13,7 @@ import CoreData
 class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 	
 	var deck: Deck?
-	var nbOfPairs = 4
+	var nbOfPairs = 2
 	
 	@IBOutlet weak var deckLabel: UILabel!
 	@IBOutlet weak var cardCountPickerView: UIPickerView!
@@ -27,10 +27,6 @@ class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, 
 	
 		deckLabel.text = deck != nil ? deck!.title : "Toutes les cartes"
 		cardCountPickerView.reloadComponent(0)
-	}
-	
-	@IBAction func launchGame(sender: AnyObject) {
-		
 	}
 }
 
@@ -50,7 +46,17 @@ extension MainTableViewController {
 			case "StartGameSegue":
 				
 				let viewController = segue.destinationViewController as! GameViewController
-				viewController.cards = deck!.cards.allObjects as! [Card]
+				
+				let cards = deck != nil ?
+					deck!.cards.allObjects as! [Card] :
+					CoreDataManager.fetchEntities(
+						"Card",
+						managedObjectContext: CoreDataManager.managedObjectContext(),
+						predicate: nil,
+						sortDescriptors: nil
+					) as! [Card]
+				
+				viewController.cards = cards
 				viewController.nbOfPairs = nbOfPairs
 				
 			default:

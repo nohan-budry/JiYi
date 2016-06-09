@@ -22,8 +22,8 @@ class CardsCheckingState: GKState {
 		
 		switch stateClass {
 			
-		case is CardsSelectionState.Type/*,
-		     is GameOverState.Type*/:
+		case is CardsSelectionState.Type,
+		     is GameOverState.Type:
 			
 			return true
 			
@@ -46,10 +46,9 @@ class CardsCheckingState: GKState {
 		
 		var entities = cards
 		let traduction = entities.removeFirst().card.traduction
-		print(traduction)
 		
 		for entity in entities {
-			print(entity.card.traduction)
+			
 			if entity.card.traduction != traduction {
 				return false
 			}

@@ -162,7 +162,6 @@ extension DeckTableViewController {
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         
         self.tableView.beginUpdates()
-        print("Begin Update in Deck View")
     }
     
     func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {

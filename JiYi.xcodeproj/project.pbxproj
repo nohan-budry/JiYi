@@ -42,6 +42,7 @@
 		93B4C5001D095AD4005B7202 /* FoundState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C4FF1D095AD4005B7202 /* FoundState.swift */; };
 		93B4C5021D0962CE005B7202 /* CardSelectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5011D0962CE005B7202 /* CardSelectionState.swift */; };
 		93B4C5041D096A37005B7202 /* CardsCheckingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5031D096A37005B7202 /* CardsCheckingState.swift */; };
+		93B4C5061D098958005B7202 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5051D098958005B7202 /* GameOverState.swift */; };
 		93E13A501D0172CC00F75A12 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */; };
 		93E13A521D0179FD00F75A12 /* DeckInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */; };
 		93E13A541D019D3900F75A12 /* DeckEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */; };
@@ -107,6 +108,7 @@
 		93B4C4FF1D095AD4005B7202 /* FoundState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundState.swift; path = GameplayKit/States/FoundState.swift; sourceTree = "<group>"; };
 		93B4C5011D0962CE005B7202 /* CardSelectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardSelectionState.swift; path = GameplayKit/States/CardSelectionState.swift; sourceTree = "<group>"; };
 		93B4C5031D096A37005B7202 /* CardsCheckingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsCheckingState.swift; path = GameplayKit/States/CardsCheckingState.swift; sourceTree = "<group>"; };
+		93B4C5051D098958005B7202 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverState.swift; path = GameplayKit/States/GameOverState.swift; sourceTree = "<group>"; };
 		93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckTableViewController.swift; path = UI/DeckView/DeckTableViewController.swift; sourceTree = "<group>"; };
 		93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckInfoTableViewController.swift; path = UI/DeckView/DeckInfoTableViewController.swift; sourceTree = "<group>"; };
 		93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckEditTableViewController.swift; path = UI/DeckView/DeckEditTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				930896981D0833F3005B8A5E /* GamePreparationState.swift */,
 				93B4C5011D0962CE005B7202 /* CardSelectionState.swift */,
 				93B4C5031D096A37005B7202 /* CardsCheckingState.swift */,
+				93B4C5051D098958005B7202 /* GameOverState.swift */,
 				93B4C4FB1D0959E2005B7202 /* FaceDownState.swift */,
 				93B4C4FD1D095AC4005B7202 /* FaceUpState.swift */,
 				93B4C4FF1D095AD4005B7202 /* FoundState.swift */,
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B4C5001D095AD4005B7202 /* FoundState.swift in Sources */,
+				93B4C5061D098958005B7202 /* GameOverState.swift in Sources */,
 				93B4C4FE1D095AC4005B7202 /* FaceUpState.swift in Sources */,
 				9308968A1D07F318005B8A5E /* GameScene.swift in Sources */,
 				9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */,

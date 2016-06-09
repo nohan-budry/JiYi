@@ -133,7 +133,6 @@
                     <navigationItem key="navigationItem" title="Nouvelle partie" id="DyH-If-dCX">
                         <barButtonItem key="rightBarButtonItem" title="Jouer" id="zLo-dY-VRv">
                             <connections>
-                                <action selector="launchGame:" destination="qL8-Bp-hs1" id="Bec-Jx-WoC"/>
                                 <segue destination="80F-Nc-I1W" kind="presentation" identifier="StartGameSegue" id="lnr-Ga-f4H"/>
                             </connections>
                         </barButtonItem>
