@@ -19,4 +19,19 @@ class GameScene: SKScene {
 		
 		memoryBrain = MemoryBrain(cards: cards, nbOfPairs: nbOfPairs, inScene: self)
 	}
+	
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		
+		for touch in touches {
+			
+			let location = touch.locationInNode(memoryBrain.gameBoardLayer)
+			
+			for node in memoryBrain.gameBoardLayer.nodesAtPoint(location) {
+				if let theNode = node as? NDNode {
+					
+					memoryBrain.cardEntityClicked(gameArrayIndex: theNode.memoryArrayIndex)
+				}
+			}
+		}
+	}
 }

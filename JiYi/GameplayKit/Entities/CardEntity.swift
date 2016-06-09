@@ -13,6 +13,7 @@ import GameplayKit
 class CardEntity: GKEntity {
 	
 	let card: Card
+	var stateMachine: GKStateMachine!
 	
 	init(card: Card, spacement: CGFloat, cardSize: CGFloat, cardsPerLine: [CGFloat], index: Int, nbOfCards: Int) {
 		
@@ -20,6 +21,7 @@ class CardEntity: GKEntity {
 		
 		super.init()
 		
+		//create visual component
 		let visualComponent = VisualComponent(
 			sign: card.sign,
 			traduction: card.traduction,
@@ -32,5 +34,45 @@ class CardEntity: GKEntity {
 		)
 		
 		addComponent(visualComponent)
+		
+		//create state machine
+		stateMachine = GKStateMachine(
+			states: [
+				FaceDownState(visualComponent: visualComponent),
+				FaceUpState(visualComponent: visualComponent),
+				FoundState(visualComponent: visualComponent)
+			]
+		)
+		stateMachine.enterState(FaceDownState)
+	}
+	
+	func switchTo(faceUp faceUp: Bool)  {
+		
+		if faceUp {
+		
+			stateMachine.enterState(FaceUpState)
+			
+		} else {
+			
+			stateMachine.enterState(FaceDownState)
+		}
+	}
+	
+	func found() -> Bool {
+		
+		return stateMachine.enterState(FoundState)
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

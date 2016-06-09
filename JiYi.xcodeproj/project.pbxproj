@@ -36,6 +36,12 @@
 		939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */; };
 		939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934D1D0154F3005CEAC3 /* Rat000.mp3 */; };
 		939B93531D0154F3005CEAC3 /* Tigre000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934E1D0154F3005CEAC3 /* Tigre000.mp3 */; };
+		93B4C4F81D0957D2005B7202 /* NDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C4F71D0957D2005B7202 /* NDNode.swift */; };
+		93B4C4FC1D0959E2005B7202 /* FaceDownState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C4FB1D0959E2005B7202 /* FaceDownState.swift */; };
+		93B4C4FE1D095AC4005B7202 /* FaceUpState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C4FD1D095AC4005B7202 /* FaceUpState.swift */; };
+		93B4C5001D095AD4005B7202 /* FoundState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C4FF1D095AD4005B7202 /* FoundState.swift */; };
+		93B4C5021D0962CE005B7202 /* CardSelectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5011D0962CE005B7202 /* CardSelectionState.swift */; };
+		93B4C5041D096A37005B7202 /* CardsCheckingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5031D096A37005B7202 /* CardsCheckingState.swift */; };
 		93E13A501D0172CC00F75A12 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */; };
 		93E13A521D0179FD00F75A12 /* DeckInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */; };
 		93E13A541D019D3900F75A12 /* DeckEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */; };
@@ -95,6 +101,12 @@
 		939B934D1D0154F3005CEAC3 /* Rat000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rat000.mp3; path = Assets/Pronunciations/Rat000.mp3; sourceTree = "<group>"; };
 		939B934E1D0154F3005CEAC3 /* Tigre000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Tigre000.mp3; path = Assets/Pronunciations/Tigre000.mp3; sourceTree = "<group>"; };
 		939B93541D016BC6005CEAC3 /* JiYi 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "JiYi 2.xcdatamodel"; sourceTree = "<group>"; };
+		93B4C4F71D0957D2005B7202 /* NDNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NDNode.swift; path = Template/NDNode.swift; sourceTree = "<group>"; };
+		93B4C4FB1D0959E2005B7202 /* FaceDownState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FaceDownState.swift; path = GameplayKit/States/FaceDownState.swift; sourceTree = "<group>"; };
+		93B4C4FD1D095AC4005B7202 /* FaceUpState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FaceUpState.swift; path = GameplayKit/States/FaceUpState.swift; sourceTree = "<group>"; };
+		93B4C4FF1D095AD4005B7202 /* FoundState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundState.swift; path = GameplayKit/States/FoundState.swift; sourceTree = "<group>"; };
+		93B4C5011D0962CE005B7202 /* CardSelectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardSelectionState.swift; path = GameplayKit/States/CardSelectionState.swift; sourceTree = "<group>"; };
+		93B4C5031D096A37005B7202 /* CardsCheckingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsCheckingState.swift; path = GameplayKit/States/CardsCheckingState.swift; sourceTree = "<group>"; };
 		93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckTableViewController.swift; path = UI/DeckView/DeckTableViewController.swift; sourceTree = "<group>"; };
 		93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckInfoTableViewController.swift; path = UI/DeckView/DeckInfoTableViewController.swift; sourceTree = "<group>"; };
 		93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckEditTableViewController.swift; path = UI/DeckView/DeckEditTableViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				930896981D0833F3005B8A5E /* GamePreparationState.swift */,
+				93B4C5011D0962CE005B7202 /* CardSelectionState.swift */,
+				93B4C5031D096A37005B7202 /* CardsCheckingState.swift */,
+				93B4C4FB1D0959E2005B7202 /* FaceDownState.swift */,
+				93B4C4FD1D095AC4005B7202 /* FaceUpState.swift */,
+				93B4C4FF1D095AD4005B7202 /* FoundState.swift */,
 			);
 			name = States;
 			sourceTree = "<group>";
@@ -223,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				931A42ED1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift */,
+				93B4C4F71D0957D2005B7202 /* NDNode.swift */,
 			);
 			name = Template;
 			sourceTree = "<group>";
@@ -460,6 +478,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B4C5001D095AD4005B7202 /* FoundState.swift in Sources */,
+				93B4C4FE1D095AC4005B7202 /* FaceUpState.swift in Sources */,
 				9308968A1D07F318005B8A5E /* GameScene.swift in Sources */,
 				9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */,
 				930896881D07F125005B8A5E /* GameViewController.swift in Sources */,
@@ -468,18 +488,22 @@
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
 				931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */,
 				930896971D07FF7B005B8A5E /* EntityManager.swift in Sources */,
+				93B4C4FC1D0959E2005B7202 /* FaceDownState.swift in Sources */,
 				930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */,
 				930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */,
 				930896951D07FB23005B8A5E /* VisualComponent.swift in Sources */,
 				9328F9CA1D00281A0025838B /* Card.swift in Sources */,
 				93280EF51D0547600058EDD5 /* DeckCardSelectorTableViewController.swift in Sources */,
+				93B4C4F81D0957D2005B7202 /* NDNode.swift in Sources */,
 				930896991D0833F3005B8A5E /* GamePreparationState.swift in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,
+				93B4C5041D096A37005B7202 /* CardsCheckingState.swift in Sources */,
 				9328F9831D0005D10025838B /* AppDelegate.swift in Sources */,
 				930896931D07FA56005B8A5E /* CardEntity.swift in Sources */,
 				93E13A541D019D3900F75A12 /* DeckEditTableViewController.swift in Sources */,
 				93E13A501D0172CC00F75A12 /* DeckTableViewController.swift in Sources */,
 				9328F9CC1D00281A0025838B /* Deck.swift in Sources */,
+				93B4C5021D0962CE005B7202 /* CardSelectionState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

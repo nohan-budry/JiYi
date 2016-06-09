@@ -1,18 +1,18 @@
 //
-//  GamePreparationState.swift
+//  CardsSelectionState.swift
 //  JiYi
 //
-//  Created by Nohan Budry on 08.06.16.
+//  Created by Nohan Budry on 09.06.16.
 //  Copyright © 2016 Nodev. All rights reserved.
 //
 
 import Foundation
 import GameplayKit
-import SpriteKit
 
-class GamePreparationState: GKState {
+class CardsSelectionState: GKState {
 	
 	let memoryBrain: MemoryBrain
+	var selectedCards: [CardEntity]!
 	
 	init(withMemoryBrain: MemoryBrain) {
 		
@@ -21,10 +21,9 @@ class GamePreparationState: GKState {
 	
 	override func isValidNextState(stateClass: AnyClass) -> Bool {
 		
-		//can only go to CardSlectionState
 		switch stateClass {
 			
-		case is CardsSelectionState.Type:
+		case is CardsCheckingState.Type:
 			
 			return true
 			
@@ -36,13 +35,43 @@ class GamePreparationState: GKState {
 	
 	override func didEnterWithPreviousState(previousState: GKState?) {
 		
-		if previousState == nil {
+		selectedCards = []
+	}
+	
+	//MARK: - Game Funcs
+	func selectCard(card: CardEntity) {
+		
+		if !selectedCards.contains(card) {
 			
-			memoryBrain.setupGame()
-			if let stateMachine = self.stateMachine {
+			selectedCards.append(card)
+			card.switchTo(faceUp: true)
+			
+			if selectedCards.count == 2 {
 				
-				stateMachine.enterState(CardsSelectionState)
+				stateMachine!.enterState(CardsCheckingState)
 			}
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

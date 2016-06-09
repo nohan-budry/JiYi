@@ -16,7 +16,7 @@ class MemoryBrain {
 	let possibleCards: [Card]
 	let nbOfPairs: Int
 	let scene: SKScene
-	var cards: [Card]!
+	var gameArray: [CardEntity]!
 	
 	//layers
 	let gameBoardLayer: SKNode
@@ -48,7 +48,9 @@ class MemoryBrain {
 		//createStateMachine
 		stateMachine = GKStateMachine(
 			states: [
-				GamePreparationState(withMemoryBrain: self)
+				GamePreparationState(withMemoryBrain: self),
+				CardsSelectionState(withMemoryBrain: self),
+				CardsCheckingState(withMemoryBrain: self)
 			]
 		)
 		
@@ -95,7 +97,8 @@ class MemoryBrain {
 		
 		//double the array to have each signe twice and shuffle the array
 		keepedSigns.appendContentsOf(keepedSigns)
-		cards = randomSource.arrayByShufflingObjectsInArray(keepedSigns) as! [Card]
+		let cards = randomSource.arrayByShufflingObjectsInArray(keepedSigns) as! [Card]
+		self.gameArray = []
 		
 		//createEntities
 		var index = 0
@@ -109,6 +112,7 @@ class MemoryBrain {
 				index: index,
 				nbOfCards: cards.count
 			)
+			self.gameArray.append(cardEntity)
 			entityManager.add(cardEntity, allreadyInScene: false, inLayer: gameBoardLayer)
 			
 			index += 1
@@ -185,6 +189,61 @@ extension MemoryBrain {
 	}
 }
 
+//MARK: - Game Funcs
+extension MemoryBrain {
+	
+	func cardEntityClicked(gameArrayIndex index: Int) {
+
+		let entity = gameArray[index]
+		
+		if let state = stateMachine.currentState as? CardsSelectionState {
+			
+			state.selectCard(entity)
+		}
+	}
+	
+	func showCheckResult(cards: [CardEntity], equals: Bool) {
+		
+		let waitAction = SKAction.waitForDuration(equals ? 0.5 : 2.0)
+		gameBoardLayer.runAction(waitAction) {
+			
+			for card in cards {
+				
+				if equals {
+					
+					card.found()
+					
+				} else {
+					
+					card.switchTo(faceUp: false)
+				}
+			}
+			
+			if !self.isGameFinished() {
+				
+				self.stateMachine.enterState(CardsSelectionState)
+				
+			} else {
+				
+				print("enter GameOverState now!")
+//				self.stateMachine.enterState(GameOverState)
+			}
+		}
+	}
+	
+	func isGameFinished() -> Bool {
+		
+		for card in gameArray {
+			
+			if !(card.stateMachine.currentState is FoundState) {
+				
+				return false
+			}
+		}
+		
+		return true
+	}
+}
 
 
 

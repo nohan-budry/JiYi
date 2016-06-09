@@ -12,7 +12,7 @@ import GameplayKit
 
 class VisualComponent: GKComponent {
 	
-	let node: SKNode
+	let node: NDNode
 	let faceNode: SKNode
 	let backNode: SKNode
 	
@@ -22,7 +22,7 @@ class VisualComponent: GKComponent {
 	
 	init(sign: String, traduction: String, faceUp: Bool, spacement: CGFloat, cardSize: CGFloat, cardsPerLine: [CGFloat], index: Int, nbOfCards: Int) {
 		
-		node = SKNode()
+		node = NDNode(inMemoryArrayIndex: index)
 		faceNode = SKNode()
 		backNode = SKNode()
 		
@@ -85,7 +85,8 @@ class VisualComponent: GKComponent {
 		
 		super.init()
 		
-		//place node
+		//node setup
+		node.name = "Card"
 		if let gridPosition = getGridPosition(index, nbOfCards: nbOfCards, cardsPerLine: cardsPerLine) {
 			
 			node.position = gridPositionToPoint(gridPosition, spacement: spacement, cardSize: cardSize)
