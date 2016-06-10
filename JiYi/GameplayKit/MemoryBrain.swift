@@ -265,7 +265,7 @@ extension MemoryBrain {
 	
 	func showScore() {
 		
-		scoreLabel.text = "\(gameScore)"
+		scoreLabel.text = "\(gameScore)/\(scorePerCards * nbOfPairs * 2)"
 	}
 	
 	func cardEntityClicked(gameArrayIndex index: Int) {

@@ -46,7 +46,7 @@ class GameOverState: GKState {
 		let text2Label = SKLabelNode(fontNamed: "Menlo")
 		text2Label.fontSize = 25
 		text2Label.fontColor = SKColor.blackColor()
-		text2Label.text = "Votre score final est: \(memoryBrain.gameArray.count)"
+		text2Label.text = "Votre score final est: \(memoryBrain.gameScore)/\(memoryBrain.scorePerCards * memoryBrain.nbOfPairs * 2)"
 		
 		let text3Label = SKLabelNode(fontNamed: "Menlo")
 		text3Label.fontSize = 25
