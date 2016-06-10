@@ -40,6 +40,7 @@ class GameScene: SKScene {
 				} else if isMenuButtonTouched(touch) {
 					
 					gameMenu.hidden = false
+					memoryBrain.menuButtonCLicked()
 				}
 				
 			} else {
@@ -51,6 +52,7 @@ class GameScene: SKScene {
 					if node.name == "ContinueButton" {
 						
 						gameMenu.hidden = true
+						memoryBrain.continueButtonClicked()
 						
 					} else if node.name == "RestartButton" {
 						

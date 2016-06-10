@@ -30,6 +30,18 @@ class MemoryBrain {
 	let defaultCardSize: CGFloat = 100
 	let defaultSpacement: CGFloat = 15
 	
+	//timer
+	var gameTimer: NSTimer!
+	var currentMsTime = 0
+	var timerLabel: SKLabelNode!
+	
+	//score
+	var gameScore = 0
+	let scorePerCards: Int
+	let scorePerFails: Int
+	let scorePerFound: Int
+	var scoreLabel: SKLabelNode!
+	
 	init(cards: [Card], nbOfPairs: Int, inScene: SKScene) {
 		
 		self.possibleCards = cards
@@ -45,6 +57,18 @@ class MemoryBrain {
 		gameBoardLayer = SKNode()
 		scene.addChild(gameBoardLayer)
 		
+		//score
+		scoreLabel = menuLayer.childNodeWithName("ScoreLabel") as! SKLabelNode
+		scorePerCards = 10
+		scorePerFails = -5
+		scorePerFound = 0
+		gameScore = scorePerCards * nbOfPairs * 2
+		showScore()
+		
+		//timer
+		timerLabel = menuLayer.childNodeWithName("TimerLabel") as! SKLabelNode
+		startGameTimer()
+		
 		//createStateMachine
 		stateMachine = GKStateMachine(
 			states: [
@@ -58,8 +82,16 @@ class MemoryBrain {
 		stateMachine.enterState(GamePreparationState)
 	}
 	
-	func setupGame() {
+	@objc func gameTimerTick() {
 		
+		currentMsTime += 100
+		
+		let seconds = currentMsTime / 1000
+		timerLabel.text = String(format: "%02d:%02d", seconds / 60 % 60, seconds % 60)
+	}
+	
+	func setupGame() {
+
 		//Setup needed values
 		let gameBoradSize = CGSizeMake(scene.size.width, scene.size.height - menuLayer.size.height)
 		
@@ -188,10 +220,53 @@ extension MemoryBrain {
 			return []
 		}
 	}
+	
+	//MARK: - Menu
+	func menuButtonCLicked() {
+		
+		stopGameTimer()
+	}
+	
+	func continueButtonClicked() {
+		
+		startGameTimer()
+	}
+	
+	func restartButtonClicked() {
+		
+		print("restart game now")
+	}
+	
+	func leaveButtonClicked() {
+		
+		print("quit game now")
+	}
+	
+	//MARK: - Timer
+	func startGameTimer() {
+		
+		gameTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
+	}
+	
+	func stopGameTimer() {
+		
+		gameTimer.invalidate()
+	}
 }
 
 //MARK: - Game Funcs
 extension MemoryBrain {
+	
+	func addScore(found found: Bool) {
+		
+		gameScore += found ? scorePerFound : scorePerFails
+		showScore()
+	}
+	
+	func showScore() {
+		
+		scoreLabel.text = "\(gameScore)"
+	}
 	
 	func cardEntityClicked(gameArrayIndex index: Int) {
 
@@ -219,6 +294,8 @@ extension MemoryBrain {
 					card.switchTo(faceUp: false)
 				}
 			}
+			
+			self.addScore(found: equals)
 			
 			if !self.isGameFinished() {
 				
