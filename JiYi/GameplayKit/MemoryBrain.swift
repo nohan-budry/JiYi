@@ -15,7 +15,7 @@ class MemoryBrain {
 	
 	let possibleCards: [Card]
 	let nbOfPairs: Int
-	let scene: SKScene
+	let scene: GameScene
 	var gameArray: [CardEntity]!
 	
 	//layers
@@ -42,7 +42,7 @@ class MemoryBrain {
 	let scorePerFound: Int
 	var scoreLabel: SKLabelNode!
 	
-	init(cards: [Card], nbOfPairs: Int, inScene: SKScene) {
+	init(cards: [Card], nbOfPairs: Int, inScene: GameScene) {
 		
 		self.possibleCards = cards
 		self.nbOfPairs = nbOfPairs
@@ -234,12 +234,23 @@ extension MemoryBrain {
 	
 	func restartButtonClicked() {
 		
-		print("restart game now")
+		//remove gamelayer and cards from vue
+		for card in gameArray {
+			
+			entityManager.remove(card)
+		}
+		gameBoardLayer.removeFromParent()
+		
+		//remove timer
+		stopGameTimer()
+		
+		//tell the scene to create a new game
+		scene.newGame()
 	}
 	
 	func leaveButtonClicked() {
 		
-		print("quit game now")
+		scene.leaveGame()
 	}
 	
 	//MARK: - Timer

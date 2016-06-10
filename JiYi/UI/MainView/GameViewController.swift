@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
 		
 		gameScene.cards = cards
 		gameScene.nbOfPairs = nbOfPairs
+		gameScene.viewController = self
 		
 		gameView.presentScene(gameScene)
 	}

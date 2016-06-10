@@ -17,13 +17,20 @@ class GameScene: SKScene {
 	var gameMenu: SKNode!
 	var topBar: SKNode!
 	
+	var viewController: UIViewController!
+	
 	override func didMoveToView(view: SKView) {
 		
 		topBar = childNodeWithName("TopBar")!
 		
 		gameMenu = childNodeWithName("GameMenu")!
-		gameMenu.hidden = true
 		
+		newGame()
+	}
+	
+	func newGame() {
+		
+		gameMenu.hidden = true
 		memoryBrain = MemoryBrain(cards: cards, nbOfPairs: nbOfPairs, inScene: self)
 	}
 	
@@ -56,11 +63,11 @@ class GameScene: SKScene {
 						
 					} else if node.name == "RestartButton" {
 						
-						print(node.name, " clicked")
+						memoryBrain.restartButtonClicked()
 						
 					} else if node.name == "LeaveButton" {
 						
-						print(node.name, "clicked")
+						memoryBrain.leaveButtonClicked()
 					}
 				}
 			}
@@ -94,6 +101,11 @@ class GameScene: SKScene {
 		}
 		
 		return false
+	}
+	
+	func leaveGame() {
+		
+		viewController.dismissViewControllerAnimated(true, completion: nil)
 	}
 }
 
