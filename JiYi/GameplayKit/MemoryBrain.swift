@@ -64,7 +64,7 @@ class MemoryBrain {
 		scorePerCards = 10
 		scorePerFails = -5
 		scorePerFound = 0
-		gameScore = scorePerCards * nbOfPairs * 2
+		gameScore = getMaxScore()
 		showScore()
 		
 		//timer
@@ -82,14 +82,6 @@ class MemoryBrain {
 		)
 		
 		stateMachine.enterState(GamePreparationState)
-	}
-	
-	@objc func gameTimerTick() {
-		
-		currentMsTime += 100
-		
-		let seconds = currentMsTime / 1000
-		timerLabel.text = String(format: "%02d:%02d", seconds / 60 % 60, seconds % 60)
 	}
 	
 	func setupGame() {
@@ -259,45 +251,20 @@ extension MemoryBrain {
 		scene.leaveGame()
 	}
 	
-	//MARK: - Timer
-	func startGameTimer() {
-		
-		gameTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
-	}
-	
-	func stopGameTimer() {
-		
-		gameTimer.invalidate()
-	}
-}
-
-//MARK: - Game Funcs
-extension MemoryBrain {
-	
-	func addScore(found found: Bool) {
-		
-		gameScore += found ? scorePerFound : scorePerFails
-		showScore()
-	}
-	
-	func showScore() {
-		
-		scoreLabel.text = "\(gameScore)/\(getMaxScore())"
-	}
-	
-	func getMaxScore() -> Int {
-		
-		return scorePerCards * nbOfPairs * 2
-	}
-	
 	func cardEntityClicked(gameArrayIndex index: Int) {
-
+		
 		let entity = gameArray[index]
 		
 		if let state = stateMachine.currentState as? CardsSelectionState {
 			
 			state.selectCard(entity)
 		}
+	}
+	
+	//MARK: - Score
+	func showScore() {
+		
+		scoreLabel.text = "\(gameScore)/\(getMaxScore())"
 	}
 	
 	func showCheckResult(cards: [CardEntity], equals: Bool) {
@@ -330,6 +297,73 @@ extension MemoryBrain {
 		}
 	}
 	
+	//MARK: - End text
+	func showEndText() {
+		
+		let node = createEndText()
+		node.alpha = 0
+		
+		scene.addChild(node)
+		
+		let fadeIn = SKAction.fadeInWithDuration(0.25)
+		let wait = SKAction.waitForDuration(5.0)
+		let fadeOut = SKAction.fadeOutWithDuration(0.25)
+		
+		node.runAction(SKAction.sequence([fadeIn, wait, fadeOut])) {
+			
+			node.removeFromParent()
+		}
+	}
+	
+	func createEndText() -> SKNode {
+		
+		let backPath = UIBezierPath(roundedRect: CGRectMake(0, 0, 500, 250), cornerRadius: 25)
+		let backShapeNode = SKShapeNode(path: backPath.CGPath, centered: true)
+		backShapeNode.strokeColor = UIColor.grayColor()
+		backShapeNode.lineWidth = 10
+		backShapeNode.fillColor = UIColor.whiteColor()
+		backShapeNode.zPosition = 100
+		backShapeNode.position = CGPointMake(scene.size.width / 2, scene.size.height / 2)
+		
+		let text1Label = SKLabelNode(fontNamed: "Menlo")
+		text1Label.fontSize = 25
+		text1Label.fontColor = SKColor.blackColor()
+		text1Label.text = "Bravo \(user.username)!"
+		text1Label.position.y = text1Label.fontSize * 2
+		
+		let text2Label = SKLabelNode(fontNamed: "Menlo")
+		text2Label.fontSize = 25
+		text2Label.fontColor = SKColor.blackColor()
+		text2Label.text = "Votre score final est: \(gameScore)/\(getMaxScore())"
+		
+		let text3Label = SKLabelNode(fontNamed: "Menlo")
+		text3Label.fontSize = 25
+		text3Label.fontColor = SKColor.blackColor()
+		text3Label.text = "Utilisez le menu pour rejouer ou quitter."
+		text3Label.position.y = -text1Label.fontSize * 2
+		
+		backShapeNode.addChild(text1Label)
+		backShapeNode.addChild(text2Label)
+		backShapeNode.addChild(text3Label)
+		
+		return backShapeNode
+	}
+}
+
+//MARK: - Game Funcs
+extension MemoryBrain {
+	
+	func addScore(found found: Bool) {
+		
+		gameScore += found ? scorePerFound : scorePerFails
+		showScore()
+	}
+	
+	func getMaxScore() -> Int {
+		
+		return scorePerCards * nbOfPairs * 2
+	}
+	
 	func isGameFinished() -> Bool {
 		
 		for card in gameArray {
@@ -345,22 +379,6 @@ extension MemoryBrain {
 		return true
 	}
 	
-	func showEndText(node: SKNode) {
-		
-		node.alpha = 0
-		
-		scene.addChild(node)
-		
-		let fadeIn = SKAction.fadeInWithDuration(0.25)
-		let wait = SKAction.waitForDuration(5.0)
-		let fadeOut = SKAction.fadeOutWithDuration(0.25)
-		
-		node.runAction(SKAction.sequence([fadeIn, wait, fadeOut])) {
-			
-			node.removeFromParent()
-		}
-	}
-	
 	func saveFinishedGame() {
 		
 		CoreDataManager.insertScore(
@@ -371,6 +389,43 @@ extension MemoryBrain {
 			user: user,
 			deck: deck
 		)
+	}
+	
+	func testCards(cards: [CardEntity]) -> Bool {
+		
+		var entities = cards
+		let traduction = entities.removeFirst().card.traduction
+		
+		for entity in entities {
+			
+			if entity.card.traduction != traduction {
+				return false
+			}
+		}
+		
+		return true
+	}
+	
+	@objc func gameTimerTick() {
+		
+		currentMsTime += 100
+		
+		let seconds = currentMsTime / 1000
+		timerLabel.text = String(format: "%02d:%02d", seconds / 60 % 60, seconds % 60)
+	}
+}
+
+//MARK: - Timer
+extension MemoryBrain {
+	
+	func startGameTimer() {
+		
+		gameTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
+	}
+	
+	func stopGameTimer() {
+		
+		gameTimer.invalidate()
 	}
 }
 

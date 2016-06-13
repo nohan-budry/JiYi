@@ -37,24 +37,8 @@ class CardsCheckingState: GKState {
 		if let state = previousState as? CardsSelectionState {
 			
 			let cards = state.selectedCards
-			memoryBrain.showCheckResult(cards, equals: testCards(cards))
+			memoryBrain.showCheckResult(cards, equals: memoryBrain.testCards(cards))
 		}
-	}
-	
-	//MARK: - Game Funcs
-	func testCards(cards: [CardEntity]) -> Bool {
-		
-		var entities = cards
-		let traduction = entities.removeFirst().card.traduction
-		
-		for entity in entities {
-			
-			if entity.card.traduction != traduction {
-				return false
-			}
-		}
-		
-		return true
 	}
 }
 

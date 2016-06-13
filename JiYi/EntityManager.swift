@@ -15,11 +15,6 @@ class EntityManager {
 	var entities = Set<GKEntity>()
 	let scene: SKScene
 	
-	lazy var componentSystems: [GKComponentSystem] = {
-		//let cameraSystem = GKComponentSystem(componentClass: CameraComponent.self)
-		return []
-	}()
-	
 	init(scene: SKScene) {
 		self.scene = scene
 	}
@@ -43,11 +38,6 @@ class EntityManager {
 				}
 			}
 		}
-		
-		//componentSystem
-		for componentSystem in componentSystems {
-			componentSystem.addComponentWithEntity(entity)
-		}
 	}
 	
 	func remove(entity: GKEntity) {
@@ -57,12 +47,5 @@ class EntityManager {
 		}
 		
 		entities.remove(entity)
-	}
-	
-	func update(deltaTime: CFTimeInterval) {
-		
-		for componentSystem in componentSystems {
-			componentSystem.updateWithDeltaTime(deltaTime)
-		}
 	}
 }
