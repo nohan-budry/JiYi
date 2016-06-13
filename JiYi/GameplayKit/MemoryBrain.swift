@@ -13,7 +13,8 @@ import CoreData
 
 class MemoryBrain {
 	
-	let possibleCards: [Card]
+	let user: User
+	let deck: Deck?
 	let nbOfPairs: Int
 	let scene: GameScene
 	var gameArray: [CardEntity]!
@@ -42,9 +43,10 @@ class MemoryBrain {
 	let scorePerFound: Int
 	var scoreLabel: SKLabelNode!
 	
-	init(cards: [Card], nbOfPairs: Int, inScene: GameScene) {
+	init(user: User, deck: Deck?, nbOfPairs: Int, inScene: GameScene) {
 		
-		self.possibleCards = cards
+		self.user = user
+		self.deck = deck
 		self.nbOfPairs = nbOfPairs
 		self.scene = inScene
 		
@@ -117,7 +119,11 @@ class MemoryBrain {
 		
 		//MARK: - Card Array Setup
 		
-		//create a shuffuled array of possible signs
+		let possibleCards = deck != nil ?
+			deck!.cards.allObjects as! [Card] :
+			CoreDataManager.fetchEntities("Card", managedObjectContext: nil, predicate: nil, sortDescriptors: nil) as! [Card]
+		
+		//create a shuffuled array of possible sign
 		let randomSource = GKRandomSource()
 		var shuffuledPossibleSigns = randomSource.arrayByShufflingObjectsInArray(possibleCards) as! [Card]
 		
@@ -276,7 +282,12 @@ extension MemoryBrain {
 	
 	func showScore() {
 		
-		scoreLabel.text = "\(gameScore)/\(scorePerCards * nbOfPairs * 2)"
+		scoreLabel.text = "\(gameScore)/\(getMaxScore())"
+	}
+	
+	func getMaxScore() -> Int {
+		
+		return scorePerCards * nbOfPairs * 2
 	}
 	
 	func cardEntityClicked(gameArrayIndex index: Int) {
@@ -329,6 +340,8 @@ extension MemoryBrain {
 			}
 		}
 		
+		stopGameTimer()
+		saveFinishedGame()
 		return true
 	}
 	
@@ -346,6 +359,18 @@ extension MemoryBrain {
 			
 			node.removeFromParent()
 		}
+	}
+	
+	func saveFinishedGame() {
+		
+		CoreDataManager.insertScore(
+			msTime: currentMsTime,
+			nbOfPoints: gameScore,
+			maxPoints: getMaxScore(),
+			nbOfPairs: nbOfPairs,
+			user: user,
+			deck: deck
+		)
 	}
 }
 

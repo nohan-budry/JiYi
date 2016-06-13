@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930159851D0EA9F300B1889D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930159841D0EA9F300B1889D /* Images.xcassets */; };
+		930159871D0EAED900B1889D /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930159861D0EAED900B1889D /* ScoreTableViewController.swift */; };
+		930159891D0EE64F00B1889D /* ProfileEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930159881D0EE64F00B1889D /* ProfileEditTableViewController.swift */; };
 		930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896831D069A8A005B8A5E /* MainTableViewController.swift */; };
 		930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */; };
 		930896881D07F125005B8A5E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930896871D07F125005B8A5E /* GameViewController.swift */; };
@@ -68,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		930159841D0EA9F300B1889D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		930159861D0EAED900B1889D /* ScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreTableViewController.swift; path = UI/ProfileView/ScoreTableViewController.swift; sourceTree = "<group>"; };
+		930159881D0EE64F00B1889D /* ProfileEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileEditTableViewController.swift; path = UI/ProfileView/ProfileEditTableViewController.swift; sourceTree = "<group>"; };
 		930896831D069A8A005B8A5E /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewController.swift; path = UI/MainView/MainTableViewController.swift; sourceTree = "<group>"; };
 		930896851D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainDeckSelectorTableViewController.swift; path = UI/MainView/MainDeckSelectorTableViewController.swift; sourceTree = "<group>"; };
 		930896871D07F125005B8A5E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = UI/MainView/GameViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 				9328F9B81D0008A00025838B /* SpriteKit */,
 				9328F9B71D0008990025838B /* GameplayKit */,
 				9328F9B61D0008930025838B /* Assets */,
+				930159841D0EA9F300B1889D /* Images.xcassets */,
 			);
 			path = JiYi;
 			sourceTree = "<group>";
@@ -330,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */,
+				930159861D0EAED900B1889D /* ScoreTableViewController.swift */,
+				930159881D0EE64F00B1889D /* ProfileEditTableViewController.swift */,
 			);
 			name = ProfileView;
 			sourceTree = "<group>";
@@ -463,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */,
+				930159851D0EA9F300B1889D /* Images.xcassets in Resources */,
 				9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */,
 				939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */,
 				939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */,
@@ -498,6 +508,7 @@
 				93B4C5001D095AD4005B7202 /* FoundState.swift in Sources */,
 				93B4C5061D098958005B7202 /* GameOverState.swift in Sources */,
 				93B4C4FE1D095AC4005B7202 /* FaceUpState.swift in Sources */,
+				930159871D0EAED900B1889D /* ScoreTableViewController.swift in Sources */,
 				9308968A1D07F318005B8A5E /* GameScene.swift in Sources */,
 				9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */,
 				930896881D07F125005B8A5E /* GameViewController.swift in Sources */,
@@ -507,6 +518,7 @@
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
 				931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */,
 				930896971D07FF7B005B8A5E /* EntityManager.swift in Sources */,
+				930159891D0EE64F00B1889D /* ProfileEditTableViewController.swift in Sources */,
 				9345CC941D0E8550008409E1 /* Score.swift in Sources */,
 				93B4C4FC1D0959E2005B7202 /* FaceDownState.swift in Sources */,
 				930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */,

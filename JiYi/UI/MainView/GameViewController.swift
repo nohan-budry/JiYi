@@ -13,7 +13,8 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 	
-	var cards: [Card]!
+	var user: User!
+	var deck: Deck?
 	var nbOfPairs: Int!
 	
 	override func viewDidLoad() {
@@ -32,7 +33,8 @@ class GameViewController: UIViewController {
 		//Scene configuration
 		gameScene.scaleMode = .Fill
 		
-		gameScene.cards = cards
+		gameScene.user = user
+		gameScene.deck = deck
 		gameScene.nbOfPairs = nbOfPairs
 		gameScene.viewController = self
 		

@@ -11,7 +11,8 @@ import SpriteKit
 
 class GameScene: SKScene {
 	
-	var cards: [Card]!
+	var user: User!
+	var deck: Deck?
 	var nbOfPairs: Int!
 	var memoryBrain: MemoryBrain!
 	var gameMenu: SKNode!
@@ -31,7 +32,7 @@ class GameScene: SKScene {
 	func newGame() {
 		
 		gameMenu.hidden = true
-		memoryBrain = MemoryBrain(cards: cards, nbOfPairs: nbOfPairs, inScene: self)
+		memoryBrain = MemoryBrain(user: user, deck: deck, nbOfPairs: nbOfPairs, inScene: self)
 	}
 	
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {

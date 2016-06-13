@@ -15,9 +15,9 @@ class Score: NSManagedObject {
 	@NSManaged var msTime: Int
 	@NSManaged var nbOfPoints: Int
 	@NSManaged var maxPoints: Int
-	@NSManaged var nbOfCards: Int
+	@NSManaged var nbOfPairs: Int
 	
 	@NSManaged var user: User
-	@NSManaged var deck: Deck
+	@NSManaged var deck: Deck?
 	
 }

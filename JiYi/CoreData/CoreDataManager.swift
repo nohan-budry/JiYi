@@ -126,7 +126,7 @@ extension CoreDataManager {
 //MARK: - Score
 extension CoreDataManager {
 	
-	class func insertScore(msTime msTime: Int, nbOfPoints: Int, maxPoints: Int, nbOfCards: Int, user: User, deck: Deck) -> Score? {
+	class func insertScore(msTime msTime: Int, nbOfPoints: Int, maxPoints: Int, nbOfPairs: Int, user: User, deck: Deck?) -> Score? {
 		
 		let context = managedObjectContext()
 		let score = insertManagedObject("Score", managedObjectContext: context) as! Score
@@ -135,7 +135,7 @@ extension CoreDataManager {
 		score.msTime = msTime
 		score.nbOfPoints = nbOfPoints
 		score.maxPoints = maxPoints
-		score.nbOfCards = nbOfCards
+		score.nbOfPairs = nbOfPairs
 		score.user = user
 		score.deck = deck
 		

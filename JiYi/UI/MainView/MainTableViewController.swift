@@ -12,6 +12,7 @@ import CoreData
 
 class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 	
+	var user: User!
 	var deck: Deck?
 	var nbOfPairs = 2
 	
@@ -20,6 +21,7 @@ class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, 
 	
 	override func viewDidLoad() {
 		
+		user = CoreDataManager.fetchEntities("User", managedObjectContext: nil, predicate: nil, sortDescriptors: nil).first as! User
 		updateInfos()
 	}
 	
@@ -47,16 +49,8 @@ extension MainTableViewController {
 				
 				let viewController = segue.destinationViewController as! GameViewController
 				
-				let cards = deck != nil ?
-					deck!.cards.allObjects as! [Card] :
-					CoreDataManager.fetchEntities(
-						"Card",
-						managedObjectContext: CoreDataManager.managedObjectContext(),
-						predicate: nil,
-						sortDescriptors: nil
-					) as! [Card]
-				
-				viewController.cards = cards
+				viewController.user = user
+				viewController.deck = deck
 				viewController.nbOfPairs = nbOfPairs
 				
 			default:
