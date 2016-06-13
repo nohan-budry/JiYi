@@ -26,11 +26,13 @@
 		9328F99B1D0005D10025838B /* JiYiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F99A1D0005D10025838B /* JiYiTests.swift */; };
 		9328F9A61D0005D10025838B /* JiYiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9A51D0005D10025838B /* JiYiUITests.swift */; };
 		9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9BC1D0009070025838B /* JiYi.xcdatamodeld */; };
-		9328F9C01D000F8D0025838B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9328F9BF1D000F8D0025838B /* Assets.xcassets */; };
 		9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9C11D0023620025838B /* CoreDataManager.swift */; };
 		9328F9CA1D00281A0025838B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9C61D00281A0025838B /* Card.swift */; };
 		9328F9CC1D00281A0025838B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328F9C81D00281A0025838B /* Deck.swift */; };
 		9328F9D11D002CE90025838B /* Cards.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9328F9D01D002CE90025838B /* Cards.plist */; };
+		9345CC901D0E84BC008409E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345CC8F1D0E84BC008409E1 /* User.swift */; };
+		9345CC941D0E8550008409E1 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345CC931D0E8550008409E1 /* Score.swift */; };
+		9345CC971D0E88DE008409E1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */; };
 		939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */; };
 		939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934B1D0154F3005CEAC3 /* Chat000.mp3 */; };
 		939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */; };
@@ -91,11 +93,14 @@
 		9328F9A51D0005D10025838B /* JiYiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiYiUITests.swift; sourceTree = "<group>"; };
 		9328F9A71D0005D10025838B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9328F9BD1D0009070025838B /* JiYi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JiYi.xcdatamodel; sourceTree = "<group>"; };
-		9328F9BF1D000F8D0025838B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets/Assets.xcassets; sourceTree = "<group>"; };
 		9328F9C11D0023620025838B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = CoreData/CoreDataManager.swift; sourceTree = "<group>"; };
 		9328F9C61D00281A0025838B /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Card.swift; path = CoreData/Card.swift; sourceTree = "<group>"; };
 		9328F9C81D00281A0025838B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deck.swift; path = CoreData/Deck.swift; sourceTree = "<group>"; };
 		9328F9D01D002CE90025838B /* Cards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Cards.plist; path = CoreData/DefaultValues/Cards.plist; sourceTree = "<group>"; };
+		9345CC8E1D0E811A008409E1 /* JiYi 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "JiYi 3.xcdatamodel"; sourceTree = "<group>"; };
+		9345CC8F1D0E84BC008409E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = CoreData/User.swift; sourceTree = "<group>"; };
+		9345CC931D0E8550008409E1 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = CoreData/Score.swift; sourceTree = "<group>"; };
+		9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = UI/ProfileView/ProfileTableViewController.swift; sourceTree = "<group>"; };
 		939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Buffle000.mp3; path = Assets/Pronunciations/Buffle000.mp3; sourceTree = "<group>"; };
 		939B934B1D0154F3005CEAC3 /* Chat000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Chat000.mp3; path = Assets/Pronunciations/Chat000.mp3; sourceTree = "<group>"; };
 		939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lapin000.mp3; path = Assets/Pronunciations/Lapin000.mp3; sourceTree = "<group>"; };
@@ -266,6 +271,8 @@
 				9328F9BC1D0009070025838B /* JiYi.xcdatamodeld */,
 				9328F9C61D00281A0025838B /* Card.swift */,
 				9328F9C81D00281A0025838B /* Deck.swift */,
+				9345CC8F1D0E84BC008409E1 /* User.swift */,
+				9345CC931D0E8550008409E1 /* Score.swift */,
 				9328F9CF1D002CCD0025838B /* DefaultValues */,
 			);
 			name = CoreData;
@@ -274,7 +281,6 @@
 		9328F9B61D0008930025838B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				9328F9BF1D000F8D0025838B /* Assets.xcassets */,
 				939B93491D015463005CEAC3 /* Pronunciations */,
 			);
 			name = Assets;
@@ -307,6 +313,7 @@
 				930896821D069990005B8A5E /* MainView */,
 				931A42EF1D0054BF006752D2 /* CardView */,
 				93E13A4E1D01729C00F75A12 /* DeckView */,
+				9345CC951D0E88B7008409E1 /* ProfileView */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -317,6 +324,14 @@
 				9328F9D01D002CE90025838B /* Cards.plist */,
 			);
 			name = DefaultValues;
+			sourceTree = "<group>";
+		};
+		9345CC951D0E88B7008409E1 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */,
+			);
+			name = ProfileView;
 			sourceTree = "<group>";
 		};
 		939B93491D015463005CEAC3 /* Pronunciations */ = {
@@ -450,7 +465,6 @@
 				939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */,
 				9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */,
 				939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */,
-				9328F9C01D000F8D0025838B /* Assets.xcassets in Resources */,
 				939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */,
 				939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */,
 				9308968C1D07F328005B8A5E /* GameScene.sks in Resources */,
@@ -487,11 +501,13 @@
 				9308968A1D07F318005B8A5E /* GameScene.swift in Sources */,
 				9308968E1D07F805005B8A5E /* MemoryBrain.swift in Sources */,
 				930896881D07F125005B8A5E /* GameViewController.swift in Sources */,
+				9345CC971D0E88DE008409E1 /* ProfileTableViewController.swift in Sources */,
 				93E13A521D0179FD00F75A12 /* DeckInfoTableViewController.swift in Sources */,
 				931A42EE1D0049FC006752D2 /* NSUserDefault+isFirstLaunch.swift in Sources */,
 				9328F9C21D0023620025838B /* CoreDataManager.swift in Sources */,
 				931A42F11D0054DC006752D2 /* CardTableViewController.swift in Sources */,
 				930896971D07FF7B005B8A5E /* EntityManager.swift in Sources */,
+				9345CC941D0E8550008409E1 /* Score.swift in Sources */,
 				93B4C4FC1D0959E2005B7202 /* FaceDownState.swift in Sources */,
 				930896841D069A8A005B8A5E /* MainTableViewController.swift in Sources */,
 				930896861D06A07A005B8A5E /* MainDeckSelectorTableViewController.swift in Sources */,
@@ -501,6 +517,7 @@
 				93B4C4F81D0957D2005B7202 /* NDNode.swift in Sources */,
 				930896991D0833F3005B8A5E /* GamePreparationState.swift in Sources */,
 				9328F9BE1D0009070025838B /* JiYi.xcdatamodeld in Sources */,
+				9345CC901D0E84BC008409E1 /* User.swift in Sources */,
 				93B4C5041D096A37005B7202 /* CardsCheckingState.swift in Sources */,
 				9328F9831D0005D10025838B /* AppDelegate.swift in Sources */,
 				930896931D07FA56005B8A5E /* CardEntity.swift in Sources */,
@@ -762,10 +779,11 @@
 		9328F9BC1D0009070025838B /* JiYi.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9345CC8E1D0E811A008409E1 /* JiYi 3.xcdatamodel */,
 				939B93541D016BC6005CEAC3 /* JiYi 2.xcdatamodel */,
 				9328F9BD1D0009070025838B /* JiYi.xcdatamodel */,
 			);
-			currentVersion = 939B93541D016BC6005CEAC3 /* JiYi 2.xcdatamodel */;
+			currentVersion = 9345CC8E1D0E811A008409E1 /* JiYi 3.xcdatamodel */;
 			name = JiYi.xcdatamodeld;
 			path = CoreData/JiYi.xcdatamodeld;
 			sourceTree = "<group>";

@@ -43,7 +43,7 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
             
         } else {
             
-            CoreDataManager.insertDeck(titleTextField.text!, createdbyUser: true, cards: cards)
+            CoreDataManager.insertDeck(title: titleTextField.text!, createdbyUser: true, cards: cards)
         }
         
         if CoreDataManager.saveManagedObjectContext() {
@@ -78,7 +78,7 @@ class DeckEditTableViewController: UITableViewController, UITextFieldDelegate, D
     }
 }
 
-//MARK: text field delegate {
+//MARK: - Text Field Delegate
 extension DeckEditTableViewController {
     
     func textFieldShouldClear(textField: UITextField) -> Bool {
@@ -110,7 +110,7 @@ extension DeckEditTableViewController {
     }
 }
 
-//MARK: deck card selector Delegate
+//MARK: - Deck Card Selector Delegate
 extension DeckEditTableViewController {
     
     func deckCardSelectorSaveList(cards: [Card]) {

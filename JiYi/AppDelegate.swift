@@ -16,14 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+		
+		//detectFirstLaunch
         if NSUserDefaults.isFirstLaunch() {
-            
+
             CoreDataManager.insertDefaultValues()
-            print("first launch")
+			
+			//add generic user
+			CoreDataManager.insertUser(username: "Joueur")
         }
-        
-        //CoreDataManager.insertNewValuesIfNeeded()
         
         return true
     }

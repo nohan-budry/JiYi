@@ -18,6 +18,7 @@ class Card: NSManagedObject {
     @NSManaged var sign: String
     @NSManaged var traduction: String
     @NSManaged var createdByUser: Bool
+	
     @NSManaged var decks: NSSet
     
     var pronunciations = [AVAudioPlayer]()
@@ -75,7 +76,7 @@ class Card: NSManagedObject {
         
         if insertIfNeeded && deckEntities.count == 0 {
         
-            if let deck = CoreDataManager.insertDeck(title, createdbyUser: createdByUser, cards:  nil) {
+            if let deck = CoreDataManager.insertDeck(title: title, createdbyUser: createdByUser, cards:  nil) {
                 
                 deckEntities.append(deck)
             }

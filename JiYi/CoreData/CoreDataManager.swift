@@ -36,17 +36,19 @@ class CoreDataManager {
         return NSEntityDescription.insertNewObjectForEntityForName(className as String, inManagedObjectContext: managedObjectContext)
     }
     
-    class func fetchEntities(className: NSString, managedObjectContext: NSManagedObjectContext, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> [NSManagedObject] {
-        
+	class func fetchEntities(className: NSString, managedObjectContext: NSManagedObjectContext?, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?) -> [NSManagedObject] {
+		
+		let context = managedObjectContext != nil ? managedObjectContext! : self.managedObjectContext()
+		
         let fetchRequest = NSFetchRequest()
         
-        fetchRequest.entity = NSEntityDescription.entityForName(className as String, inManagedObjectContext: managedObjectContext)
+        fetchRequest.entity = NSEntityDescription.entityForName(className as String, inManagedObjectContext: context)
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = sortDescriptors
         
         do {
             
-            return try managedObjectContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            return try context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
             
         } catch {
             
@@ -64,10 +66,10 @@ class CoreDataManager {
 	}
 }
 
-//MARK: Card entity funcs
+//MARK: - Card
 extension CoreDataManager {
     
-    class func insertCard(sign: String, traduction: String, createdbyUser: Bool, decks: NSSet?) -> Card? {
+    class func insertCard(sign sign: String, traduction: String, createdbyUser: Bool, decks: NSSet?) -> Card? {
         
         let context = managedObjectContext()
         let card = insertManagedObject("Card", managedObjectContext: context) as! Card
@@ -83,14 +85,14 @@ extension CoreDataManager {
 	
 	class func numberOfCards() -> Int {
 	
-		return fetchEntities("Card", managedObjectContext: managedObjectContext(), predicate: nil, sortDescriptors: nil).count
+		return fetchEntities("Card", managedObjectContext: nil, predicate: nil, sortDescriptors: nil).count
 	}
 }
 
-//MARK: Deck entity funcs
+//MARK: - Deck
 extension CoreDataManager {
     
-    class func insertDeck(title: String, createdbyUser: Bool, cards: NSSet?) -> Deck? {
+    class func insertDeck(title title: String, createdbyUser: Bool, cards: NSSet?) -> Deck? {
         
         let context = managedObjectContext()
         let deck = insertManagedObject("Deck", managedObjectContext: context) as! Deck
@@ -99,42 +101,79 @@ extension CoreDataManager {
         deck.title = title
         deck.createdByUser = createdbyUser
         deck.cards = cards != nil ? cards! : NSSet()
+		deck.scores = NSSet()
         
         return saveManagedObjectContext() ? deck : nil
     }
 }
 
-//MARK: default values manager
+//MARK: - User
 extension CoreDataManager {
-    
-    class func insertDefaultValues() -> Bool {
-        
-        let path = NSBundle.mainBundle().pathForResource("Cards", ofType: "plist")
-        let dict = NSArray(contentsOfFile: path!) as! [AnyObject]
-        
-        for cardDict in dict {
-            
-            insertCardWithDefaultValues(cardDict as! [String:AnyObject])
-        }
-        
-        return saveManagedObjectContext()
-    }
-    
-    class func insertCardWithDefaultValues(dict: [String:AnyObject]) {
-        
-        let sign = dict["sign"] as! String
-        let traduction = dict["traduction"] as! String
-        let decks = dict["decks"] as! [String]
-        
-        if let card = insertCard(sign, traduction: traduction, createdbyUser: false, decks: nil) {
-            
-            for deck in decks {
-                
-                //add deck of the card and insert if needed
-                card.addToDeck(deck, insertIfNeeded: true, createdByUser: false)
-            }
-        }
-    }
+	
+	class func insertUser(username username: String) -> User? {
+		
+		let context = managedObjectContext()
+		let user = insertManagedObject("User", managedObjectContext: context) as! User
+		
+		user.identifier = NSDate()
+		user.username = username
+		user.scores = NSSet()
+		
+		return saveManagedObjectContext() ? user : nil
+	}
+}
+
+//MARK: - Score
+extension CoreDataManager {
+	
+	class func insertScore(msTime msTime: Int, nbOfPoints: Int, maxPoints: Int, nbOfCards: Int, user: User, deck: Deck) -> Score? {
+		
+		let context = managedObjectContext()
+		let score = insertManagedObject("Score", managedObjectContext: context) as! Score
+		
+		score.identifier = NSDate()
+		score.msTime = msTime
+		score.nbOfPoints = nbOfPoints
+		score.maxPoints = maxPoints
+		score.nbOfCards = nbOfCards
+		score.user = user
+		score.deck = deck
+		
+		return saveManagedObjectContext() ? score : nil
+	}
+}
+
+//MARK: - DefaultValues
+extension CoreDataManager {
+	
+	class func insertDefaultValues() -> Bool {
+		
+		let path = NSBundle.mainBundle().pathForResource("Cards", ofType: "plist")
+		let dict = NSArray(contentsOfFile: path!) as! [AnyObject]
+		
+		for cardDict in dict {
+			
+			insertCardWithDefaultValues(cardDict as! [String:AnyObject])
+		}
+		
+		return saveManagedObjectContext()
+	}
+	
+	class func insertCardWithDefaultValues(dict: [String:AnyObject]) {
+		
+		let sign = dict["sign"] as! String
+		let traduction = dict["traduction"] as! String
+		let decks = dict["decks"] as! [String]
+		
+		if let card = insertCard(sign: sign, traduction: traduction, createdbyUser: false, decks: nil) {
+			
+			for deck in decks {
+				
+				//add deck of the card and insert if needed
+				card.addToDeck(deck, insertIfNeeded: true, createdByUser: false)
+			}
+		}
+	}
 }
 
 

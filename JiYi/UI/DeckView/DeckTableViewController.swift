@@ -91,7 +91,7 @@ class DeckTableViewController: UITableViewController, NSFetchedResultsController
     }
 }
 
-//MARK: tableView funcs
+//MARK: - Table View
 extension DeckTableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -156,7 +156,7 @@ extension DeckTableViewController {
 	}
 }
 
-//MARK: fetched result controller delegate
+//MARK: - Fetched Results Controller Delegate
 extension DeckTableViewController {
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
