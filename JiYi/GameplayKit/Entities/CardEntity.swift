@@ -35,6 +35,10 @@ class CardEntity: GKEntity {
 		
 		addComponent(visualComponent)
 		
+		//create pronunciation component
+		let pronunciationComponent = PronunciationComponent(card: card)
+		addComponent(pronunciationComponent)
+		
 		//create state machine
 		stateMachine = GKStateMachine(
 			states: [
@@ -61,6 +65,14 @@ class CardEntity: GKEntity {
 	func found() -> Bool {
 		
 		return stateMachine.enterState(FoundState)
+	}
+	
+	func playSound() {
+		
+		if let pronunciationComponent = componentForClass(PronunciationComponent) {
+			
+			pronunciationComponent.play()
+		}
 	}
 }
 

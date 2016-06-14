@@ -255,9 +255,25 @@ extension MemoryBrain {
 		
 		let entity = gameArray[index]
 		
+		
+		switch entity.stateMachine.currentState {
+			
+		case is FaceUpState, is FoundState:
+			
+			//play pronunciation if in good state
+			entity.playSound()
+			
+		default:
+			
+			break
+		}
+		
 		if let state = stateMachine.currentState as? CardsSelectionState {
 			
-			state.selectCard(entity)
+			if entity.stateMachine.currentState is FaceDownState {
+				
+				state.selectCard(entity)
+			}
 		}
 	}
 	

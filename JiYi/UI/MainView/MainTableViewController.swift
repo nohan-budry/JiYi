@@ -10,14 +10,15 @@ import Foundation
 import UIKit
 import CoreData
 
-class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class MainTableViewController: UITableViewController, MainDeckSelectorDelegate {
 	
 	var user: User!
 	var deck: Deck?
 	var nbOfPairs = 2
 	
 	@IBOutlet weak var deckLabel: UILabel!
-	@IBOutlet weak var cardCountPickerView: UIPickerView!
+	@IBOutlet weak var nbOfCardsLabel: UILabel!
+	@IBOutlet weak var stepper: UIStepper!
 	
 	override func viewDidLoad() {
 		
@@ -28,7 +29,22 @@ class MainTableViewController: UITableViewController, MainDeckSelectorDelegate, 
 	func updateInfos() {
 	
 		deckLabel.text = deck != nil ? deck!.title : "Toutes les cartes"
-		cardCountPickerView.reloadComponent(0)
+		
+		stepper.minimumValue = 2
+		stepper.maximumValue = Double(deck != nil ? deck!.cards.count : CoreDataManager.numberOfCards())
+		
+		if nbOfPairs > Int(stepper.maximumValue) {
+			
+			nbOfPairs = Int(stepper.maximumValue)
+		}
+		
+		nbOfCardsLabel.text = "\(nbOfPairs) Cartes"
+	}
+	
+	@IBAction func stepperValueChanged(sender: UIStepper) {
+		
+		nbOfPairs = Int(stepper.value)
+		updateInfos()
 	}
 }
 
@@ -72,52 +88,6 @@ extension MainTableViewController {
 			
 			navigationController.popToViewController(self, animated: true)
 		}
-	}
-}
-
-//MARK: - Picker View Delegete && DataSource
-extension MainTableViewController {
-	
-	var possiblesNbOfCards: [Int] {
-		
-		let maxCount = deck == nil ? CoreDataManager.numberOfCards() : deck!.cards.count
-		var counts = [Int]()
-		
-		//count limit by me !!!
-		let limitMinCount = 2
-		let limitMaxCount = 16
-		
-		for i in limitMinCount ... limitMaxCount {
-			
-			if i > maxCount {
-				
-				break
-			}
-			
-			counts.append(i)
-		}
-		
-		return counts
-	}
-	
-	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-		
-		return 1
-	}
-	
-	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		
-		return possiblesNbOfCards.count
-	}
-	
-	func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-		
-		nbOfPairs = possiblesNbOfCards[row]
-	}
-	
-	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		
-		return "\(possiblesNbOfCards[row])"
 	}
 }
 

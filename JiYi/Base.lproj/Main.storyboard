@@ -87,52 +87,34 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombres de paires" id="70D-l3-vfD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="MTR-ME-Xim">
-                                        <rect key="frame" x="0.0" y="215" width="600" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="MTR-ME-Xim">
+                                        <rect key="frame" x="0.0" y="215" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MTR-ME-Xim" id="1vs-Xz-tF8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shu-23-1TC">
-                                                    <rect key="frame" x="8" y="8" width="584" height="183"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nb Cartes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCo-lk-wMS">
+                                                    <rect key="frame" x="18" y="8" width="472" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="2" minimumValue="2" maximumValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="sXI-PF-h7o">
+                                                    <rect key="frame" x="498" y="10" width="94" height="29"/>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="qL8-Bp-hs1" id="x5v-DY-N6o"/>
-                                                        <outlet property="delegate" destination="qL8-Bp-hs1" id="PD4-g7-Q6d"/>
+                                                        <action selector="stepperValueChanged:" destination="qL8-Bp-hs1" eventType="valueChanged" id="wfj-LT-Jpc"/>
                                                     </connections>
-                                                </pickerView>
+                                                </stepper>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Shu-23-1TC" secondAttribute="trailing" id="9gr-Ju-gYs"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="Shu-23-1TC" secondAttribute="leading" id="KSR-e4-VTi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Shu-23-1TC" secondAttribute="trailing" id="L5M-Qb-0zp"/>
-                                                <constraint firstAttribute="topMargin" secondItem="Shu-23-1TC" secondAttribute="top" id="Nfc-BY-tKO"/>
-                                                <constraint firstAttribute="topMargin" secondItem="Shu-23-1TC" secondAttribute="top" id="YMf-LC-nOY"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Shu-23-1TC" secondAttribute="bottom" id="a9m-l2-nF8"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Shu-23-1TC" secondAttribute="bottom" id="aM2-AQ-vUI"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="Shu-23-1TC" secondAttribute="leading" id="pAV-SS-lM4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HCo-lk-wMS" secondAttribute="bottom" id="DAO-by-mdH"/>
+                                                <constraint firstAttribute="topMargin" secondItem="HCo-lk-wMS" secondAttribute="top" id="DTf-f3-jxf"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="HCo-lk-wMS" secondAttribute="leading" constant="-10" id="bRM-EU-nFd"/>
+                                                <constraint firstItem="sXI-PF-h7o" firstAttribute="leading" secondItem="HCo-lk-wMS" secondAttribute="trailing" constant="8" id="gjr-X4-iad"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sXI-PF-h7o" secondAttribute="trailing" id="tRc-fW-AL5"/>
+                                                <constraint firstItem="sXI-PF-h7o" firstAttribute="centerY" secondItem="1vs-Xz-tF8" secondAttribute="centerY" id="uFF-J2-MVc"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="9gr-Ju-gYs"/>
-                                                    <exclude reference="Nfc-BY-tKO"/>
-                                                    <exclude reference="a9m-l2-nF8"/>
-                                                    <exclude reference="pAV-SS-lM4"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="K9g-gN-9W2">
-                                        <rect key="frame" x="0.0" y="415" width="600" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K9g-gN-9W2" id="SoB-PT-iIg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="BH3-0R-aEI">
-                                                    <rect key="frame" x="6" y="7" width="588" height="31"/>
-                                                </slider>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -151,8 +133,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cardCountPickerView" destination="Shu-23-1TC" id="CTr-q4-mtJ"/>
                         <outlet property="deckLabel" destination="qkd-aA-lfE" id="Mm8-EY-6mQ"/>
+                        <outlet property="nbOfCardsLabel" destination="HCo-lk-wMS" id="JFT-79-z5x"/>
+                        <outlet property="stepper" destination="sXI-PF-h7o" id="aY7-Qc-JEm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ch-Tb-NhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
