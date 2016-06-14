@@ -137,9 +137,10 @@ class VisualComponent: GKComponent {
 		for line in cardsPerLine {
 			
 			if i < line {
-				
+				print(" -> ", i, ", ", line)
 				//add 0.5 if it's line 2 or 3 and sign count is odd
-				let x = (nbOfCards / 2 >= 5 && y >= line - 2 && nbOfCards / 2 % 2 == 1 ) ? i + 0.5 : i
+				let x = (nbOfCards / 2 >= 5 && y >= CGFloat(cardsPerLine.count - 2) && nbOfCards / 2 % 2 == 1 ) ? i + 0.5 : i
+				print(x, ", ", y)
 				return (x, y)
 			}
 			

@@ -10,7 +10,7 @@
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
-			<string>Zodiaque</string>
+			<string>Zodiaque chinois</string>
 		</array>
 	</dict>
 	<dict>
@@ -21,7 +21,7 @@
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
-			<string>Zodiaque</string>
+			<string>Zodiaque chinois</string>
 		</array>
 	</dict>
 	<dict>
@@ -32,7 +32,7 @@
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
-			<string>Zodiaque</string>
+			<string>Zodiaque chinois</string>
 		</array>
 	</dict>
 	<dict>
@@ -42,7 +42,96 @@
 		<string>Lapin</string>
 		<key>decks</key>
 		<array>
-			<string>Zodiaque</string>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>龍</string>
+		<key>traduction</key>
+		<string>Dragon</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>蛇</string>
+		<key>traduction</key>
+		<string>Sepent</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>馬</string>
+		<key>traduction</key>
+		<string>Cheval</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>羊</string>
+		<key>traduction</key>
+		<string>Mouton</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>猴</string>
+		<key>traduction</key>
+		<string>Singe</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>公雞</string>
+		<key>traduction</key>
+		<string>Coq</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>狗</string>
+		<key>traduction</key>
+		<string>Chien</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>豬</string>
+		<key>traduction</key>
+		<string>Cochon</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Zodiaque chinois</string>
 		</array>
 	</dict>
 	<dict>
@@ -53,6 +142,139 @@
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>豚</string>
+		<key>traduction</key>
+		<string>Dauphin</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Animaux marins</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>鯊</string>
+		<key>traduction</key>
+		<string>Requin</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Animaux marins</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>龜</string>
+		<key>traduction</key>
+		<string>Tortue</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+			<string>Animaux marins</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>狼</string>
+		<key>traduction</key>
+		<string>Loup</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>鴿</string>
+		<key>traduction</key>
+		<string>Pigeon</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>鸚</string>
+		<key>traduction</key>
+		<string>Perroquet</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>鷹</string>
+		<key>traduction</key>
+		<string>Aigle</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>飛</string>
+		<key>traduction</key>
+		<string>Mouche</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>蜂</string>
+		<key>traduction</key>
+		<string>Abeille</string>
+		<key>decks</key>
+		<array>
+			<string>Animaux</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>樹</string>
+		<key>traduction</key>
+		<string>Arbre</string>
+		<key>decks</key>
+		<array>
+			<string>Nature</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>草</string>
+		<key>traduction</key>
+		<string>Herbe</string>
+		<key>decks</key>
+		<array>
+			<string>Nature</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>山</string>
+		<key>traduction</key>
+		<string>Montagne</string>
+		<key>decks</key>
+		<array>
+			<string>Nature</string>
+		</array>
+	</dict>
+	<dict>
+		<key>sign</key>
+		<string>江</string>
+		<key>traduction</key>
+		<string>Rivière</string>
+		<key>decks</key>
+		<array>
+			<string>Nature</string>
 		</array>
 	</dict>
 </array>

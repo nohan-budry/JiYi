@@ -33,6 +33,11 @@ class MainTableViewController: UITableViewController, MainDeckSelectorDelegate {
 		stepper.minimumValue = 2
 		stepper.maximumValue = Double(deck != nil ? deck!.cards.count : CoreDataManager.numberOfCards())
 		
+		if stepper.maximumValue > 16 {
+			
+			stepper.maximumValue = 16
+		}
+		
 		if nbOfPairs > Int(stepper.maximumValue) {
 			
 			nbOfPairs = Int(stepper.maximumValue)
