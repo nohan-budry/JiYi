@@ -25,7 +25,6 @@
                         <segue destination="RtJ-ir-IxD" kind="relationship" relationship="viewControllers" id="9mZ-QU-ehv"/>
                         <segue destination="Nkk-al-3Jz" kind="relationship" relationship="viewControllers" id="AGp-lq-Wws"/>
                         <segue destination="jEr-XY-W1g" kind="relationship" relationship="viewControllers" id="6Hx-to-27N"/>
-                        <segue destination="aGL-vY-2PU" kind="relationship" relationship="viewControllers" id="rnJ-kG-UId"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuw-c4-WDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,7 +86,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Nombres de paires" id="70D-l3-vfD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="MTR-ME-Xim">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="MTR-ME-Xim">
                                         <rect key="frame" x="0.0" y="215" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MTR-ME-Xim" id="1vs-Xz-tF8">
@@ -274,53 +273,6 @@
             </objects>
             <point key="canvasLocation" x="145" y="929"/>
         </scene>
-        <!--Settings View-->
-        <scene sceneID="j5K-FO-Mw0">
-            <objects>
-                <tableViewController title="Settings View" id="oDy-eB-l29" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0jb-uk-43G">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" id="OdP-zo-6Zm">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OdP-zo-6Zm" id="ItE-zn-mIy">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oDy-eB-l29" id="fH3-Rl-pUe"/>
-                            <outlet property="delegate" destination="oDy-eB-l29" id="3pe-xr-bQt"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Réglages" id="7Gg-qb-yjR"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fKx-eX-LJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="925" y="3243"/>
-        </scene>
-        <!--Settings Nav-->
-        <scene sceneID="Gum-1s-x4V">
-            <objects>
-                <navigationController title="Settings Nav" id="aGL-vY-2PU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Réglages" image="settingsBarButton" id="9VA-w7-WeZ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VtA-8m-deY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oDy-eB-l29" kind="relationship" relationship="rootViewController" id="dKd-zj-EdO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R9k-UV-6Cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="145" y="3243"/>
-        </scene>
         <!--Profile View-->
         <scene sceneID="T3p-hg-EFE">
             <objects>
@@ -332,7 +284,7 @@
                         <sections>
                             <tableViewSection headerTitle="Informations" id="g2g-eO-MWu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" textLabel="A4e-RV-QAE" rowHeight="44" style="IBUITableViewCellStyleDefault" id="50L-dQ-Ogj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileCell" textLabel="A4e-RV-QAE" rowHeight="44" style="IBUITableViewCellStyleDefault" id="50L-dQ-Ogj">
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="50L-dQ-Ogj" id="QGg-XB-Su4">
@@ -972,7 +924,7 @@
                         <sections>
                             <tableViewSection headerTitle="Informations" id="p4d-aO-9ll">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TFh-VH-xVg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="TFh-VH-xVg">
                                         <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TFh-VH-xVg" id="cCU-MJ-I4n">
@@ -1028,7 +980,6 @@
         <image name="deckBarButton" width="22" height="22"/>
         <image name="mainBarButton" width="22" height="22"/>
         <image name="profileBarButton" width="22" height="22"/>
-        <image name="settingsBarButton" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="euL-4U-IwV"/>
