@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "settingsBarButton.png",
+      "filename" : "AppIcon180.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "settingsBarButton@2x.png",
       "scale" : "2x"
     },
     {

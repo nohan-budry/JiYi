@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		930159851D0EA9F300B1889D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930159841D0EA9F300B1889D /* Images.xcassets */; };
 		930159871D0EAED900B1889D /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930159861D0EAED900B1889D /* ScoreTableViewController.swift */; };
 		930159891D0EE64F00B1889D /* ProfileEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930159881D0EE64F00B1889D /* ProfileEditTableViewController.swift */; };
 		9301598B1D0FE91B00B1889D /* PronunciationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9301598A1D0FE91B00B1889D /* PronunciationComponent.swift */; };
@@ -37,6 +36,7 @@
 		9345CC901D0E84BC008409E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345CC8F1D0E84BC008409E1 /* User.swift */; };
 		9345CC941D0E8550008409E1 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345CC931D0E8550008409E1 /* Score.swift */; };
 		9345CC971D0E88DE008409E1 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */; };
+		937EF17D1D10325200AB5D2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937EF17C1D10325200AB5D2C /* Images.xcassets */; };
 		939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */; };
 		939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934B1D0154F3005CEAC3 /* Chat000.mp3 */; };
 		939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */; };
@@ -72,7 +72,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		930159841D0EA9F300B1889D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		930159861D0EAED900B1889D /* ScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreTableViewController.swift; path = UI/ProfileView/ScoreTableViewController.swift; sourceTree = "<group>"; };
 		930159881D0EE64F00B1889D /* ProfileEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileEditTableViewController.swift; path = UI/ProfileView/ProfileEditTableViewController.swift; sourceTree = "<group>"; };
 		9301598A1D0FE91B00B1889D /* PronunciationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PronunciationComponent.swift; path = GameplayKit/Components/PronunciationComponent.swift; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		9345CC8F1D0E84BC008409E1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = CoreData/User.swift; sourceTree = "<group>"; };
 		9345CC931D0E8550008409E1 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Score.swift; path = CoreData/Score.swift; sourceTree = "<group>"; };
 		9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = UI/ProfileView/ProfileTableViewController.swift; sourceTree = "<group>"; };
+		937EF17C1D10325200AB5D2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assets/Images.xcassets; sourceTree = "<group>"; };
 		939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Buffle000.mp3; path = Assets/Pronunciations/Buffle000.mp3; sourceTree = "<group>"; };
 		939B934B1D0154F3005CEAC3 /* Chat000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Chat000.mp3; path = Assets/Pronunciations/Chat000.mp3; sourceTree = "<group>"; };
 		939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lapin000.mp3; path = Assets/Pronunciations/Lapin000.mp3; sourceTree = "<group>"; };
@@ -231,7 +231,6 @@
 				9328F9B81D0008A00025838B /* SpriteKit */,
 				9328F9B71D0008990025838B /* GameplayKit */,
 				9328F9B61D0008930025838B /* Assets */,
-				930159841D0EA9F300B1889D /* Images.xcassets */,
 			);
 			path = JiYi;
 			sourceTree = "<group>";
@@ -292,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				939B93491D015463005CEAC3 /* Pronunciations */,
+				937EF17C1D10325200AB5D2C /* Images.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */,
-				930159851D0EA9F300B1889D /* Images.xcassets in Resources */,
+				937EF17D1D10325200AB5D2C /* Images.xcassets in Resources */,
 				9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */,
 				939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */,
 				939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */,
@@ -686,9 +686,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JiYi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.nodev.JiYi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -698,9 +700,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = JiYi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.nodev.JiYi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

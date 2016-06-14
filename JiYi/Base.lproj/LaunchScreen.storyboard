@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,12 +18,37 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GJK-6I-f0i">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GJK-6I-f0i" secondAttribute="height" multiplier="1:1" id="CGw-u5-JsS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GJK-6I-f0i" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="74d-7F-6Yp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GJK-6I-f0i" secondAttribute="trailing" id="F8l-uq-N63"/>
+                            <constraint firstItem="GJK-6I-f0i" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="adb-RQ-Uq8"/>
+                            <constraint firstItem="GJK-6I-f0i" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bJG-Jd-vGi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="GJK-6I-f0i" secondAttribute="leading" id="zGD-3E-Cc5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="74d-7F-6Yp"/>
+                                <exclude reference="F8l-uq-N63"/>
+                                <exclude reference="zGD-3E-Cc5"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="479" y="170"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreenIcon" width="180" height="180"/>
+    </resources>
 </document>
