@@ -349,8 +349,8 @@
 		9328F9B81D0008A00025838B /* SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
-				93F225391D112A600069F96A /* GameScene.sks */,
 				930896891D07F318005B8A5E /* GameScene.swift */,
+				93F225391D112A600069F96A /* GameScene.sks */,
 			);
 			name = SpriteKit;
 			sourceTree = "<group>";
@@ -378,8 +378,8 @@
 			isa = PBXGroup;
 			children = (
 				9345CC961D0E88DE008409E1 /* ProfileTableViewController.swift */,
-				930159861D0EAED900B1889D /* ScoreTableViewController.swift */,
 				930159881D0EE64F00B1889D /* ProfileEditTableViewController.swift */,
+				930159861D0EAED900B1889D /* ScoreTableViewController.swift */,
 			);
 			name = ProfileView;
 			sourceTree = "<group>";
@@ -418,10 +418,10 @@
 		93E13A4E1D01729C00F75A12 /* DeckView */ = {
 			isa = PBXGroup;
 			children = (
-				93F225371D112A100069F96A /* DeckCardSelectorTableViewController.swift */,
 				93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */,
 				93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */,
 				93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */,
+				93F225371D112A100069F96A /* DeckCardSelectorTableViewController.swift */,
 			);
 			name = DeckView;
 			sourceTree = "<group>";

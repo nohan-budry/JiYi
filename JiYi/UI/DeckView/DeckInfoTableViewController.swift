@@ -1,5 +1,5 @@
 //
-//  DeckInfoViewController.swift
+//  DeckInfoTableViewController.swift
 //  JiYi
 //
 //  Created by Nohan Budry on 03.06.16.

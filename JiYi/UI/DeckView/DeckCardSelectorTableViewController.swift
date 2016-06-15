@@ -1,5 +1,5 @@
 //
-//  DeckCardSelectorViewController.swift
+//  DeckCardSelectorTableViewController.swift
 //  JiYi
 //
 //  Created by Nohan Budry on 06.06.16.

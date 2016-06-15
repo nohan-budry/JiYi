@@ -31,7 +31,7 @@ class ScoreTableViewController: UITableViewController, NSFetchedResultsControlle
 			deckNameLabel.text = score.deck != nil ? score.deck!.title : "Toutes les cartes"
 			
 			let formatter = NSDateFormatter()
-			formatter.dateFormat = "hh:mm dd:MM:YY"
+			formatter.dateFormat = "hh:mm dd.MM.YY"
 			dateLabel.text = "\(formatter.stringFromDate(score.identifier))"
 		}
 	}
