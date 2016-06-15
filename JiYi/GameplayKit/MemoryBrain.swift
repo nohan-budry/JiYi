@@ -62,7 +62,7 @@ class MemoryBrain {
 		//score
 		scoreLabel = menuLayer.childNodeWithName("ScoreLabel") as! SKLabelNode
 		scorePerCards = 10
-		scorePerFails = -5
+		scorePerFails = -10
 		scorePerFound = 0
 		gameScore = getMaxScore()
 		showScore()
@@ -333,7 +333,7 @@ extension MemoryBrain {
 	
 	func createEndText() -> SKNode {
 		
-		let backPath = UIBezierPath(roundedRect: CGRectMake(0, 0, 500, 250), cornerRadius: 25)
+		let backPath = UIBezierPath(roundedRect: CGRectMake(0, 0, 650, 250), cornerRadius: 25)
 		let backShapeNode = SKShapeNode(path: backPath.CGPath, centered: true)
 		backShapeNode.strokeColor = UIColor.grayColor()
 		backShapeNode.lineWidth = 10

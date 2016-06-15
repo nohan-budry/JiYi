@@ -12,10 +12,10 @@ import CoreData
 class Score: NSManagedObject {
 	
 	@NSManaged var identifier: NSDate
-	@NSManaged var msTime: Int
-	@NSManaged var nbOfPoints: Int
-	@NSManaged var maxPoints: Int
-	@NSManaged var nbOfPairs: Int
+	@NSManaged var msTime: Int64
+	@NSManaged var nbOfPoints: Int64
+	@NSManaged var maxPoints: Int64
+	@NSManaged var nbOfPairs: Int64
 	
 	@NSManaged var user: User
 	@NSManaged var deck: Deck?

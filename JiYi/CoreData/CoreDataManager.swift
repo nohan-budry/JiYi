@@ -132,10 +132,10 @@ extension CoreDataManager {
 		let score = insertManagedObject("Score", managedObjectContext: context) as! Score
 		
 		score.identifier = NSDate()
-		score.msTime = msTime
-		score.nbOfPoints = nbOfPoints
-		score.maxPoints = maxPoints
-		score.nbOfPairs = nbOfPairs
+		score.msTime = Int64(msTime)
+		score.nbOfPoints = Int64(nbOfPoints)
+		score.maxPoints = Int64(maxPoints)
+		score.nbOfPairs = Int64(nbOfPairs)
 		score.user = user
 		score.deck = deck
 		

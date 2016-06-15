@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		
 		//detectFirstLaunch
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             CoreDataManager.insertDefaultValues()
 			
 			//add generic user
-			CoreDataManager.insertUser(username: "Joueur")
+			CoreDataManager.insertUser(username: "Joueur 1")
         }
         
         return true

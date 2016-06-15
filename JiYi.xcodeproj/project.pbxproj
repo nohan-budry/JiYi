@@ -49,6 +49,25 @@
 		93B4C5021D0962CE005B7202 /* CardSelectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5011D0962CE005B7202 /* CardSelectionState.swift */; };
 		93B4C5041D096A37005B7202 /* CardsCheckingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5031D096A37005B7202 /* CardsCheckingState.swift */; };
 		93B4C5061D098958005B7202 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4C5051D098958005B7202 /* GameOverState.swift */; };
+		93E0E8B01D1095F2006D8AC9 /* Abeille000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E89D1D1095F2006D8AC9 /* Abeille000.mp3 */; };
+		93E0E8B11D1095F2006D8AC9 /* Aigle000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E89E1D1095F2006D8AC9 /* Aigle000.mp3 */; };
+		93E0E8B21D1095F2006D8AC9 /* Arbre000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E89F1D1095F2006D8AC9 /* Arbre000.mp3 */; };
+		93E0E8B31D1095F2006D8AC9 /* Cheval000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A01D1095F2006D8AC9 /* Cheval000.mp3 */; };
+		93E0E8B41D1095F2006D8AC9 /* Chien000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A11D1095F2006D8AC9 /* Chien000.mp3 */; };
+		93E0E8B51D1095F2006D8AC9 /* Cochon000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A21D1095F2006D8AC9 /* Cochon000.mp3 */; };
+		93E0E8B61D1095F2006D8AC9 /* Coq000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A31D1095F2006D8AC9 /* Coq000.mp3 */; };
+		93E0E8B71D1095F2006D8AC9 /* Dragon000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A41D1095F2006D8AC9 /* Dragon000.mp3 */; };
+		93E0E8B81D1095F2006D8AC9 /* Herbe000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A51D1095F2006D8AC9 /* Herbe000.mp3 */; };
+		93E0E8B91D1095F2006D8AC9 /* Loup000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A61D1095F2006D8AC9 /* Loup000.mp3 */; };
+		93E0E8BA1D1095F2006D8AC9 /* Montagne000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A71D1095F2006D8AC9 /* Montagne000.mp3 */; };
+		93E0E8BB1D1095F2006D8AC9 /* Mouton000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A81D1095F2006D8AC9 /* Mouton000.mp3 */; };
+		93E0E8BC1D1095F2006D8AC9 /* Perroquet000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8A91D1095F2006D8AC9 /* Perroquet000.mp3 */; };
+		93E0E8BD1D1095F2006D8AC9 /* Pigeon000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8AA1D1095F2006D8AC9 /* Pigeon000.mp3 */; };
+		93E0E8BE1D1095F2006D8AC9 /* Requin000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8AB1D1095F2006D8AC9 /* Requin000.mp3 */; };
+		93E0E8BF1D1095F2006D8AC9 /* Rivière000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8AC1D1095F2006D8AC9 /* Rivière000.mp3 */; };
+		93E0E8C01D1095F2006D8AC9 /* Serpent000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8AD1D1095F2006D8AC9 /* Serpent000.mp3 */; };
+		93E0E8C11D1095F2006D8AC9 /* Singe000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8AE1D1095F2006D8AC9 /* Singe000.mp3 */; };
+		93E0E8C21D1095F2006D8AC9 /* Tortue000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93E0E8AF1D1095F2006D8AC9 /* Tortue000.mp3 */; };
 		93E13A501D0172CC00F75A12 /* DeckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */; };
 		93E13A521D0179FD00F75A12 /* DeckInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */; };
 		93E13A541D019D3900F75A12 /* DeckEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */; };
@@ -122,6 +141,25 @@
 		93B4C5011D0962CE005B7202 /* CardSelectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardSelectionState.swift; path = GameplayKit/States/CardSelectionState.swift; sourceTree = "<group>"; };
 		93B4C5031D096A37005B7202 /* CardsCheckingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardsCheckingState.swift; path = GameplayKit/States/CardsCheckingState.swift; sourceTree = "<group>"; };
 		93B4C5051D098958005B7202 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverState.swift; path = GameplayKit/States/GameOverState.swift; sourceTree = "<group>"; };
+		93E0E89D1D1095F2006D8AC9 /* Abeille000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Abeille000.mp3; path = Assets/Pronunciations/Abeille000.mp3; sourceTree = "<group>"; };
+		93E0E89E1D1095F2006D8AC9 /* Aigle000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Aigle000.mp3; path = Assets/Pronunciations/Aigle000.mp3; sourceTree = "<group>"; };
+		93E0E89F1D1095F2006D8AC9 /* Arbre000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Arbre000.mp3; path = Assets/Pronunciations/Arbre000.mp3; sourceTree = "<group>"; };
+		93E0E8A01D1095F2006D8AC9 /* Cheval000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Cheval000.mp3; path = Assets/Pronunciations/Cheval000.mp3; sourceTree = "<group>"; };
+		93E0E8A11D1095F2006D8AC9 /* Chien000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Chien000.mp3; path = Assets/Pronunciations/Chien000.mp3; sourceTree = "<group>"; };
+		93E0E8A21D1095F2006D8AC9 /* Cochon000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Cochon000.mp3; path = Assets/Pronunciations/Cochon000.mp3; sourceTree = "<group>"; };
+		93E0E8A31D1095F2006D8AC9 /* Coq000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Coq000.mp3; path = Assets/Pronunciations/Coq000.mp3; sourceTree = "<group>"; };
+		93E0E8A41D1095F2006D8AC9 /* Dragon000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dragon000.mp3; path = Assets/Pronunciations/Dragon000.mp3; sourceTree = "<group>"; };
+		93E0E8A51D1095F2006D8AC9 /* Herbe000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Herbe000.mp3; path = Assets/Pronunciations/Herbe000.mp3; sourceTree = "<group>"; };
+		93E0E8A61D1095F2006D8AC9 /* Loup000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Loup000.mp3; path = Assets/Pronunciations/Loup000.mp3; sourceTree = "<group>"; };
+		93E0E8A71D1095F2006D8AC9 /* Montagne000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Montagne000.mp3; path = Assets/Pronunciations/Montagne000.mp3; sourceTree = "<group>"; };
+		93E0E8A81D1095F2006D8AC9 /* Mouton000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Mouton000.mp3; path = Assets/Pronunciations/Mouton000.mp3; sourceTree = "<group>"; };
+		93E0E8A91D1095F2006D8AC9 /* Perroquet000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Perroquet000.mp3; path = Assets/Pronunciations/Perroquet000.mp3; sourceTree = "<group>"; };
+		93E0E8AA1D1095F2006D8AC9 /* Pigeon000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Pigeon000.mp3; path = Assets/Pronunciations/Pigeon000.mp3; sourceTree = "<group>"; };
+		93E0E8AB1D1095F2006D8AC9 /* Requin000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Requin000.mp3; path = Assets/Pronunciations/Requin000.mp3; sourceTree = "<group>"; };
+		93E0E8AC1D1095F2006D8AC9 /* Rivière000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Rivière000.mp3"; path = "Assets/Pronunciations/Rivière000.mp3"; sourceTree = "<group>"; };
+		93E0E8AD1D1095F2006D8AC9 /* Serpent000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Serpent000.mp3; path = Assets/Pronunciations/Serpent000.mp3; sourceTree = "<group>"; };
+		93E0E8AE1D1095F2006D8AC9 /* Singe000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Singe000.mp3; path = Assets/Pronunciations/Singe000.mp3; sourceTree = "<group>"; };
+		93E0E8AF1D1095F2006D8AC9 /* Tortue000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Tortue000.mp3; path = Assets/Pronunciations/Tortue000.mp3; sourceTree = "<group>"; };
 		93E13A4F1D0172CC00F75A12 /* DeckTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckTableViewController.swift; path = UI/DeckView/DeckTableViewController.swift; sourceTree = "<group>"; };
 		93E13A511D0179FD00F75A12 /* DeckInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckInfoTableViewController.swift; path = UI/DeckView/DeckInfoTableViewController.swift; sourceTree = "<group>"; };
 		93E13A531D019D3900F75A12 /* DeckEditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckEditTableViewController.swift; path = UI/DeckView/DeckEditTableViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +387,25 @@
 		939B93491D015463005CEAC3 /* Pronunciations */ = {
 			isa = PBXGroup;
 			children = (
+				93E0E89D1D1095F2006D8AC9 /* Abeille000.mp3 */,
+				93E0E89E1D1095F2006D8AC9 /* Aigle000.mp3 */,
+				93E0E89F1D1095F2006D8AC9 /* Arbre000.mp3 */,
+				93E0E8A01D1095F2006D8AC9 /* Cheval000.mp3 */,
+				93E0E8A11D1095F2006D8AC9 /* Chien000.mp3 */,
+				93E0E8A21D1095F2006D8AC9 /* Cochon000.mp3 */,
+				93E0E8A31D1095F2006D8AC9 /* Coq000.mp3 */,
+				93E0E8A41D1095F2006D8AC9 /* Dragon000.mp3 */,
+				93E0E8A51D1095F2006D8AC9 /* Herbe000.mp3 */,
+				93E0E8A61D1095F2006D8AC9 /* Loup000.mp3 */,
+				93E0E8A71D1095F2006D8AC9 /* Montagne000.mp3 */,
+				93E0E8A81D1095F2006D8AC9 /* Mouton000.mp3 */,
+				93E0E8A91D1095F2006D8AC9 /* Perroquet000.mp3 */,
+				93E0E8AA1D1095F2006D8AC9 /* Pigeon000.mp3 */,
+				93E0E8AB1D1095F2006D8AC9 /* Requin000.mp3 */,
+				93E0E8AC1D1095F2006D8AC9 /* Rivière000.mp3 */,
+				93E0E8AD1D1095F2006D8AC9 /* Serpent000.mp3 */,
+				93E0E8AE1D1095F2006D8AC9 /* Singe000.mp3 */,
+				93E0E8AF1D1095F2006D8AC9 /* Tortue000.mp3 */,
 				939B934A1D0154F3005CEAC3 /* Buffle000.mp3 */,
 				939B934B1D0154F3005CEAC3 /* Chat000.mp3 */,
 				939B934C1D0154F3005CEAC3 /* Lapin000.mp3 */,
@@ -474,15 +531,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E0E8C11D1095F2006D8AC9 /* Singe000.mp3 in Resources */,
+				93E0E8B71D1095F2006D8AC9 /* Dragon000.mp3 in Resources */,
+				93E0E8BE1D1095F2006D8AC9 /* Requin000.mp3 in Resources */,
+				93E0E8B01D1095F2006D8AC9 /* Abeille000.mp3 in Resources */,
 				939B93501D0154F3005CEAC3 /* Chat000.mp3 in Resources */,
 				937EF17D1D10325200AB5D2C /* Images.xcassets in Resources */,
+				93E0E8B21D1095F2006D8AC9 /* Arbre000.mp3 in Resources */,
 				9328F9901D0005D10025838B /* LaunchScreen.storyboard in Resources */,
+				93E0E8B51D1095F2006D8AC9 /* Cochon000.mp3 in Resources */,
+				93E0E8B11D1095F2006D8AC9 /* Aigle000.mp3 in Resources */,
+				93E0E8C01D1095F2006D8AC9 /* Serpent000.mp3 in Resources */,
+				93E0E8B61D1095F2006D8AC9 /* Coq000.mp3 in Resources */,
 				939B934F1D0154F3005CEAC3 /* Buffle000.mp3 in Resources */,
 				939B93521D0154F3005CEAC3 /* Rat000.mp3 in Resources */,
+				93E0E8B31D1095F2006D8AC9 /* Cheval000.mp3 in Resources */,
+				93E0E8B81D1095F2006D8AC9 /* Herbe000.mp3 in Resources */,
+				93E0E8BB1D1095F2006D8AC9 /* Mouton000.mp3 in Resources */,
+				93E0E8B91D1095F2006D8AC9 /* Loup000.mp3 in Resources */,
 				939B93511D0154F3005CEAC3 /* Lapin000.mp3 in Resources */,
+				93E0E8C21D1095F2006D8AC9 /* Tortue000.mp3 in Resources */,
 				9308968C1D07F328005B8A5E /* GameScene.sks in Resources */,
+				93E0E8B41D1095F2006D8AC9 /* Chien000.mp3 in Resources */,
+				93E0E8BA1D1095F2006D8AC9 /* Montagne000.mp3 in Resources */,
 				939B93531D0154F3005CEAC3 /* Tigre000.mp3 in Resources */,
+				93E0E8BF1D1095F2006D8AC9 /* Rivière000.mp3 in Resources */,
 				9328F9D11D002CE90025838B /* Cards.plist in Resources */,
+				93E0E8BD1D1095F2006D8AC9 /* Pigeon000.mp3 in Resources */,
+				93E0E8BC1D1095F2006D8AC9 /* Perroquet000.mp3 in Resources */,
 				9328F9881D0005D10025838B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

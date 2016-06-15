@@ -61,7 +61,7 @@
 		<key>sign</key>
 		<string>蛇</string>
 		<key>traduction</key>
-		<string>Sepent</string>
+		<string>Serpent</string>
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
@@ -103,7 +103,7 @@
 	</dict>
 	<dict>
 		<key>sign</key>
-		<string>公雞</string>
+		<string>雞</string>
 		<key>traduction</key>
 		<string>Coq</string>
 		<key>decks</key>
@@ -146,9 +146,9 @@
 	</dict>
 	<dict>
 		<key>sign</key>
-		<string>豚</string>
+		<string>鯊</string>
 		<key>traduction</key>
-		<string>Dauphin</string>
+		<string>Requin</string>
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
@@ -157,9 +157,9 @@
 	</dict>
 	<dict>
 		<key>sign</key>
-		<string>鯊</string>
+		<string>豚</string>
 		<key>traduction</key>
-		<string>Requin</string>
+		<string>Dauphin</string>
 		<key>decks</key>
 		<array>
 			<string>Animaux</string>
